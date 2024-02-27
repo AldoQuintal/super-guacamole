@@ -1,7 +1,8 @@
-from django.http import HttpResponse
+#from django.http import HttpResponse
 from django.shortcuts import render
-
+from .models import Tanques
 # Create your views here.
 
 def home(request):
-    return HttpResponse("<h1>Hola bola</h1>")
+    tanquesList=Tanques.objects.all()
+    return render(request, "tanques_view.html", {"tanques" : tanquesList})

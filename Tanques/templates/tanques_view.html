@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regitro de Tanques</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <th>Prueba?</th>
+        </thead>
+        <tbody>
+            {% for c in tanques%}
+            <tr>
+                <td>{{c.producto}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
