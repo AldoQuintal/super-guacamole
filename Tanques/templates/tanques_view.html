@@ -54,5 +54,19 @@
             </div>
         </div>
     </div>
+    <table>
+        <thead>
+            <tr>
+                <th>??????</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in tanques %}
+            <tr>
+                <td>{{c.producto}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
