@@ -3,4 +3,4 @@ from .models import Entregas
 
 # Register your models here.
 
-admin.site.register(Entregas)
+#admin.site.register(Entregas)
