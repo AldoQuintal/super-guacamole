@@ -33,23 +33,23 @@
                             <div class="form-group">
                                 <input type="text" name="txtnum_tanque" class="form-control" placeholder="Número tanque">
                             </div>
+                            <div class="form-group">
+                                <input type="text" name="txtprodcuto" class="form-control" placeholder="Producto">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="txtdescripcion" class="form-control" placeholder="Clave del Producto">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="txtcapacidad" class="form-control" placeholder="Capacidad">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="txtaltura" class="form-control" placeholder="Altura">
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        <table>
-        <thead>
-            <th>Prueba?</th>
-        </thead>
-        <tbody>
-            {% for c in tanques%}
-            <tr>
-                <td>{{c.producto}}</td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
 </body>
 </html>
