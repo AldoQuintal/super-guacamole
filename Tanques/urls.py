@@ -7,3 +7,5 @@ urlpatterns = [
     path('registrarTanque/', registrar_tanque),
     path('eliminacionTanques/<int:id>', eliminar_tanque )
 ]
+
+
