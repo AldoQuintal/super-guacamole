@@ -38,7 +38,7 @@
                 <h2>Registro Tanques</h2>
                 <div class="card">
                     <div class="card-body">
-                        <form action="/registrarTanque/" method="POST">{% csrf_token %}
+                        <form action="/editarTanque/" method="POST">{% csrf_token %}
                             <div class="form-group">
                                 <input type="text" name="txtnum_tanque" class="form-control" value="{{tanque.num_tanque}}" minlength="1" maxlength="20" placeholder="Número tanque" autofocus required>
                             </div>
