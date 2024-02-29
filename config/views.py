@@ -22,5 +22,5 @@ def registrar_config(request):
     num_entregas=request.POST['txtnum_entregas']
     
 
-    configuracion =config.objects.create(num_puntos=num_puntos, num_entregas=num_entregas)
-    return redirect('/')
+    configu =config.objects.create(num_puntos=num_puntos, num_entregas=num_entregas)
+    return redirect('/configuracion/')
