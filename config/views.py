@@ -23,4 +23,4 @@ def registrar_config(request):
     
 
     configuracion =config.objects.create(num_puntos=num_puntos, num_entregas=num_entregas)
-    return redirect('/configuracion/')
+    return redirect('/')
