@@ -11,7 +11,7 @@ def home(request):
 
     data={
         'titulo'    : 'Regitro de Tanques',
-        'tanques'   : 'tanquesList'
+        'tanques'   : tanquesList
     }
     return render(request, "tanques_view.html", data)
 
@@ -43,4 +43,13 @@ def eliminar_tanque(request, id):
 
     return redirect('/')
 
+
+def edit_tanque(request, id):
+    tanque=Tanques.objects.get(id=id)
+    data={
+        'titulo'    : 'Edición de tanque',
+        'tanque'   : tanque
+    }
+
+    return render(request, "edicionTanque.html", data)
 

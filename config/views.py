@@ -8,7 +8,7 @@ def home(request):
 
     data={
         'titulo'    : 'Configuración',
-        'tanques'   : 'configList'
+        'tanques'   : configList
     }
     return render(request, "config_view.html", data)
 
