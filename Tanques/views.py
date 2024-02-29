@@ -1,7 +1,7 @@
 #from django.http import HttpResponse
 from typing import Any
 from django.db.models.query import QuerySet
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from .models import Tanques
 # Create your views here.
@@ -26,3 +26,9 @@ class TanquesListView(ListView):
         context=super().get_context_data(**kwargs)
         context['titulo'] = 'Regitro de Tanques'
         return context
+
+def eliminar_tanque(request, id):
+    tanque=Tanques.objects.get(id=id)
+    tanque.delete()
+
+    return redirect('/')
