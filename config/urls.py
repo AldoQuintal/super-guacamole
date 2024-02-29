@@ -3,6 +3,6 @@ from config.views import ConfigListView, registrar_config
 
 
 urlpatterns = [
-    path('configuracion', ConfigListView.as_view(), name='gestion_config'),
+    path('', ConfigListView.as_view(), name='gestion_config'),
     path('registrarConfig/', registrar_config),
 ]
