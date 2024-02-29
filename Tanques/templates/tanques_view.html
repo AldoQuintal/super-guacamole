@@ -32,7 +32,7 @@
                 <h2>Registro Tanques</h2>
                 <div class="card">
                     <div class="card-body">
-                        <form action="">
+                        <form action="/registrarTanque/" method="POST">{% csrf_token %}
                             <div class="form-group">
                                 <input type="text" name="txtnum_tanque" class="form-control" placeholder="Número tanque">
                             </div>
@@ -61,10 +61,10 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th class="centrado"># Tanque</th>
-                                <th class="centrado">Producto</th>
-                                <th class="centrado">Clave Producto</th>
-                                <th class="centrado">Capacidad</th>
+                                <th># Tanque</th>
+                                <th>Producto</th>
+                                <th>Clave Producto</th>
+                                <th>Capacidad</th>
                             </tr>
                         </thead>
                         <tbody>
