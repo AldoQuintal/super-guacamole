@@ -23,7 +23,7 @@
           </ul>
         </div>
       </nav>
-    <div class="container">
+    <div class="container py-4">
         <div class="row">
             <div class="col-md-4">
                 <h2>Registro Tanques</h2>
@@ -53,17 +53,24 @@
                 </div>
             </div>
             <div class="col-md-8">
+                <h2>Listado de Tanques</h2>
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
                             <tr>
-                                <th>??????</th>
+                                <th># Tanque</th>
+                                <th>Producto</th>
+                                <th>Clave Producto</th>
+                                <th>Capacidad</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for c in tanques %}
                             <tr>
+                                <td>{{c.num_tanque}}</td>
                                 <td>{{c.producto}}</td>
+                                <td>{{c.descripcion}}</td>
+                                <td>{{c.capacidad}}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
