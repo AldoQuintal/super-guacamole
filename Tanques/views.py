@@ -34,8 +34,8 @@ def registrar_tanque(request):
     capacidad=request.POST['txtcapacidad']
     altura=request.POST['txtaltura']
 
-
     tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
+    return redirect('/')
 
 def eliminar_tanque(request, id):
     tanque=Tanques.objects.get(id=id)
