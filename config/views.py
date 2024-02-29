@@ -17,7 +17,7 @@ class ConfigListView(ListView):
     template_name='config_view.html'
 
 
-def registrar_tanque(request):
+def registrar_config(request):
     num_puntos=request.POST['txtnum_puntos']
     num_entregas=request.POST['txtnum_entregas']
     

@@ -1,8 +1,8 @@
 from django.urls import path, include
-from config.views import ConfigListView
+from config.views import ConfigListView, registrar_config
 
 
 urlpatterns = [
     path('', ConfigListView.as_view(), name='gestion_config'),
-    path('registrarTanque/', registrar_tanque),
+    path('registrarTanque/', registrar_config),
 ]
