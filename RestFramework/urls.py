@@ -21,6 +21,5 @@ from Tanques.views import *
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('', home)
-
+    path('', include('api.urls'))
 ]
