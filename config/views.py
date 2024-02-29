@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import config
 from django.views.generic import ListView
 
@@ -15,3 +15,12 @@ def home(request):
 class ConfigListView(ListView):
     model=config
     template_name='config_view.html'
+
+
+def registrar_tanque(request):
+    num_puntos=request.POST['txtnum_puntos']
+    num_entregas=request.POST['txtnum_entregas']
+    
+
+    configuracion =config.objects.create(num_puntos=num_puntos, num_entregas=num_entregas)
+    return redirect('/configuracion/')
