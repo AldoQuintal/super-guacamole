@@ -93,3 +93,9 @@ def registrar_config(request):
 
     tanque =configuration.objects.create(num_puntos=num_puntos, num_entregas=num_entregas)
     return redirect('/configuracion/')
+
+def eliminar_config(request, id):
+    conf=configuration.objects.get(id=id)
+    conf.delete()
+
+    return redirect('/configuracion/')

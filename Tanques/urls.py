@@ -1,5 +1,5 @@
 from django.urls import path, include
-from Tanques.views import TanquesListView, eliminar_tanque, registrar_tanque, edit_tanque, editar_tanque, registrar_config, configuracion, ConfigListView
+from Tanques.views import TanquesListView, eliminar_tanque, registrar_tanque, edit_tanque, editar_tanque, registrar_config ,eliminar_config ,configuracion, ConfigListView
 
 
 
@@ -11,6 +11,7 @@ urlpatterns = [
     path('editarTanque/', editar_tanque ),
     path('configuracion/', configuracion ),
     path('registrarConfig/', registrar_config), 
+    path('eliminacionConfig/<int:id>', eliminar_config ),
     #path('configuracion/', ConfigListView.as_view(), name='gestion_configuracion')
 ]
 
