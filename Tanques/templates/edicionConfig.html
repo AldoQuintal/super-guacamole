@@ -39,7 +39,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="/editarConfig/" method="POST">{% csrf_token %}
-                            <input type="hidden" value="{{config.id}}" name="id">
+                            <input type="hidden" value="{{conf.id}}" name="id">
                             <div class="form-group">
                                 <input type="text" name="txtnum_puntos" class="form-control" value="{{conf.num_puntos}}" minlength="1" maxlength="3" placeholder="Número de puntos" autofocus required>
                             </div>
