@@ -7,6 +7,8 @@
     <title>{{ titulo }}</title>
     <link rel="short icon" href="{% static 'img/logo.png' %}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
     <link rel="stylesheet" href="{% static 'css/gestionTanques.css' %}">
 </head>
 <body>
@@ -32,24 +34,50 @@
           </ul>
         </div>
       </nav>
+    
     <div class="container py-4">
         <div class="row">
+                        
             <div class="col-md-4">
                 <h2>Configuración</h2>
                 <div class="card">
                     <div class="card-body">
                         <form action="/registrarConfig/" method="POST">{% csrf_token %}
                             <div class="form-group">
-                                <input type="text" name="txtnum_puntos" class="form-control" minlength="1" maxlength="20" placeholder="Número de puntos" autofocus required>
+                                <input type="text" name="txtnum_puntos" class="form-control" minlength="1" maxlength="3" placeholder="Total puntos tablas cubicaje" autofocus required>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="txtnum_entregas" class="form-control" minlength="1" maxlength="20" placeholder="Número de Entregas a guardar" autofocus required>
+                                <input type="text" name="txtnum_entregas" class="form-control" minlength="1" maxlength="2" placeholder="Total Entregas" autofocus required>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-success btn-block text-white" value="Guardar">
                             </div>
                         </form>
                     </div>
+                </div>
+            </div>
+            
+            <div class="col-md-8">
+                <h2>Configuración Actual</h2>
+                <div class="table-responsive">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th># de puntos</th>
+                                <th># de Entregas</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for c in object_list %}
+                            <tr>
+                                <td>{{c.num_puntos}}</td>
+                                <td>{{c.num_entregas}}</td>
+                                <td><a href="edicionConfig/{{c.id}}" class="btn btn-sm btn-block btn-info"><i class="fas fa-pencil-alt"></i> Editar</td>
+                                <td><a href="eliminacionConfig/{{c.id}}" class="btn btn-sm btn-block btn-danger"><i class="far fa-trash-alt"></i> Eliminar</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
