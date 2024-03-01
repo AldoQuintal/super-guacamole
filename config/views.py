@@ -3,8 +3,8 @@ from .models import config
 from django.views.generic import ListView
 
 # Create your views here.
-def configuracion(request):
-    configList=config.objects.all()
+def configuracion(request, id):
+    configList=config.objects.get(id=id)
 
     data={
         'titulo'    : 'Configuración',
