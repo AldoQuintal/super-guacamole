@@ -10,7 +10,8 @@ urlpatterns = [
     path('edicionTanques/<int:id>', edit_tanque ),
     path('editarTanque/', editar_tanque ),
     path('configuracion/', configuracion ),
-    path('registrarConfig/', registrar_config)
+    path('registrarConfig/', registrar_config), 
+    path('', ConfigListView.as_view(), name='gestion_configuracion')
 ]
 
 
