@@ -9,8 +9,8 @@ urlpatterns = [
     path('eliminacionTanques/<int:id>', eliminar_tanque ),
     path('edicionTanques/<int:id>', edit_tanque ),
     path('editarTanque/', editar_tanque ),
-    path('configuracion//<int:id>', configuracion ),
-    path('registrarConfig/', registrar_config)
+    path('configuracion/', configuracion ),
+    #path('registrarConfig/', registrar_config)
 ]
 
 

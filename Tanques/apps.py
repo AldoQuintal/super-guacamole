@@ -8,3 +8,8 @@ class TanquesConfig(AppConfig):
 class monitoreoTanquesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'monitoreoTanques'
+
+class ConfigConfig(AppConfig):
+    default_auto_field = 'django.db.models.BigAutoField'
+    name = 'config'
+    
