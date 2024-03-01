@@ -3,7 +3,7 @@ from .models import config
 from django.views.generic import ListView
 
 # Create your views here.
-def home(request):
+def configuracion(request):
     configList=config.objects.all()
 
     data={
