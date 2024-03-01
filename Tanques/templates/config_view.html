@@ -57,7 +57,7 @@
                 </div>
             </div>
             {% endif %}
-            
+            {% if not config %}  
             <div class="col-md-8">
                 <h2>Configuración Actual</h2>
                 <div class="table-responsive">
@@ -81,6 +81,7 @@
                     </table>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </body>
