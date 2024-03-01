@@ -3,7 +3,7 @@ from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from .models import Tanques, config
+from .models import Tanques, configuration
 # Create your views here.
 
 def home(request):
@@ -75,7 +75,7 @@ def editar_tanque(request):
 
 # Create your views here.
 def configuracion(request):
-    configList=config.objects.all()
+    configList=configuration.objects.all()
 
     data={
         'titulo'    : 'Configuración',
@@ -84,5 +84,5 @@ def configuracion(request):
     return render(request, "config_view.html", data)
 
 class ConfigListView(ListView):
-    model=config
+    model=configuration
     template_name='config_view.html'

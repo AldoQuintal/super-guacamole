@@ -1,6 +1,6 @@
 from django.urls import path, include
-from Tanques.views import TanquesListView, eliminar_tanque, registrar_tanque, edit_tanque, editar_tanque
-from config.views import ConfigListView, registrar_config, configuracion
+from Tanques.views import TanquesListView, eliminar_tanque, registrar_tanque, edit_tanque, editar_tanque, configuracion, ConfigListView
+
 
 
 urlpatterns = [
