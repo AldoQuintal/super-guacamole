@@ -11,7 +11,7 @@ urlpatterns = [
     path('editarTanque/', editar_tanque ),
     path('configuracion/', configuracion ),
     path('registrarConfig/', registrar_config), 
-    path('configuracion/', ConfigListView.as_view(), name='gestion_configuracion')
+    #path('configuracion/', ConfigListView.as_view(), name='gestion_configuracion')
 ]
 
 

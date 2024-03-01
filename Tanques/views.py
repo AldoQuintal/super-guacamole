@@ -79,7 +79,7 @@ def configuracion(request):
 
     data={
         'titulo'    : 'Configuración',
-        'tanques'   : configList
+        'config'   : configList
     }
     return render(request, "config_view.html", data)
 
