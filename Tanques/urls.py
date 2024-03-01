@@ -1,5 +1,5 @@
 from django.urls import path, include
-from Tanques.views import TanquesListView, eliminar_tanque, registrar_tanque, edit_tanque, editar_tanque, edit_config, registrar_config ,eliminar_config ,configuracion, ConfigListView
+from Tanques.views import TanquesListView, eliminar_tanque, registrar_tanque, edit_tanque, editar_tanque, editar_config, edit_config, registrar_config ,eliminar_config ,configuracion, ConfigListView
 
 
 
@@ -12,7 +12,7 @@ urlpatterns = [
     path('configuracion/', configuracion ),
     path('registrarConfig/', registrar_config), 
     path('eliminacionConfig/<int:id>', eliminar_config ),
-    path('editarConfig/', editar_tanque ),
+    path('editarConfig/', editar_config ),
     path('edicionConfig/<int:id>', edit_config ),
     
     #path('configuracion/', ConfigListView.as_view(), name='gestion_configuracion')
