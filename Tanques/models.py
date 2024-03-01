@@ -23,6 +23,6 @@ class monitoreoTanques(models.Model):
     vr_agua = models.CharField(max_length=20)
     vr_temp = models.CharField(max_length=20)
 
-class config(models.Model):
+class configuration(models.Model):
     num_puntos = models.CharField(max_length=10, verbose_name="Número de puntos a Configurar")
     num_entregas = models.CharField(max_length=10, verbose_name="Número de entregas a guardar")
