@@ -18,9 +18,12 @@ class ConfigListView(ListView):
 
 
 def registrar_config(request):
+    id = int(request.POST['id'])
     num_puntos=request.POST['txtnum_puntos']
     num_entregas=request.POST['txtnum_entregas']
+    global_config = config.objects.get(id=id)
+    global_config.num_puntos = num_puntos
+    global_config.num_entregas = num_entregas
+    global_config.save()
     
-
-    configu =config.objects.create(num_puntos=num_puntos, num_entregas=num_entregas)
     return redirect('/configuracion/')
