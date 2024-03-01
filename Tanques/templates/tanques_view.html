@@ -31,6 +31,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="/configuracion/">Configuración</a>
               </li>
+            {% if user.is_authenticated %}
+                <li>
+                    <a href="{% url 'logout' %}">Cerrar sesión</a>
+
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'login' %}">Iniciar sesión</a>
+                    
+                </li>
+            {% endif %}
           </ul>
         </div>
       </nav>
