@@ -99,3 +99,27 @@ def eliminar_config(request, id):
     conf.delete()
 
     return redirect('/configuracion/')
+
+def edit_config(request, id):
+    conf=configuration.objects.get(id=id)
+    data={
+        'titulo'    : 'Edición de configuración',
+        'conf'   : conf
+    }
+
+    return render(request, "edicionConfig.html", data)
+
+def editar_config(request):
+    id = int(request.POST['id'])
+    num_puntos=request.POST['txtnum_puntos']
+    num_entregas=request.POST['txtnum_entregas']
+    
+
+    conf=configuration.objects.get(id=id)
+    conf.num_puntos = num_puntos
+    conf.num_entregas = num_entregas
+    conf.save()
+
+    #tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
+    return redirect('/configuracion/')
+

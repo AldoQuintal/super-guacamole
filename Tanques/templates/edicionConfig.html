@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }}</title>
+    <link rel="short icon" href="{% static 'img/logo.png' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/gestionTanques.css' %}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">TEAM</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Registro Tanques</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/tablas_cubicaje">Tablas de Cubicaje</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/consulta_entrega">Consulta de Entregas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/configuracion/">Configuración</a>
+              </li>
+          </ul>
+        </div>
+      </nav>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <h2>Registro Tanques</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <form action="/editarConfig/" method="POST">{% csrf_token %}
+                            <input type="hidden" value="{{tanque.id}}" name="id">
+                            <div class="form-group">
+                                <input type="text" name="txtnum_puntos" class="form-control" value="{{conf.num_puntos}}" minlength="1" maxlength="3" placeholder="Número de puntos" autofocus required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="txtnum_entregas" class="form-control" value="{{conf.num_entregas}}" minlength="1" maxlength="3" placeholder="Número de Entregas" autofocus required>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
