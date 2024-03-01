@@ -43,6 +43,7 @@
                     <table class="table table-striped">
                         <thead>
                             <tr>
+                                <th>#</th>
                                 <th>Vr Tanque</th>
                                 <th>Fecha inicial</th>
                                 <th>Fecha Final</th>
@@ -55,6 +56,7 @@
                         <tbody>
                             {% for c in entrega %}
                             <tr>
+                                <td>{{forloop.counter}}</td>
                                 <td>{{c.vr_tanque}}</td>
                                 <td>{{c.fecha_ini}}</td>
                                 <td>{{c.fecha_fin}}</td>
