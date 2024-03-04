@@ -41,8 +41,9 @@ def registrar_tanque(request):
 
 def eliminar_tanque(request, id):
     tanque=Tanques.objects.get(id=id)
+    print(f'id Tanque ++++++++++++ {tanque}')
     tanque.delete()
-
+    
     return redirect('/')
 
 
