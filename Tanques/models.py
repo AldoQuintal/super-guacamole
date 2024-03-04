@@ -26,3 +26,7 @@ class monitoreoTanques(models.Model):
 class configuration(models.Model):
     num_puntos = models.CharField(max_length=10, verbose_name="Número de puntos a Configurar")
     num_entregas = models.CharField(max_length=10, verbose_name="Número de entregas a guardar")
+
+class tanqueT1(models.Model):
+    altura = models.CharField()
+    volumen = models.CharField()

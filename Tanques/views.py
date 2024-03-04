@@ -3,7 +3,7 @@ from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from .models import Tanques, configuration
+from .models import Tanques, configuration, tanqueT1
 # Create your views here.
 
 def home(request):
@@ -136,3 +136,14 @@ def tabla_cubicaje(request, id):
     }
 
     return render(request, "tabla_cubicaje.html", data)
+
+def registro_puntos(request):
+    id = int(request.POST['id'])
+    altura=request.POST['txtaltura']
+    volumen=request.POST['txtvolumen']
+    
+    tanque=Tanques.objects.get(id=id)
+    print(f'Tanques object: {tanque}')
+
+    #tanque =tanqueT1.objects.create()
+    #return redirect('/')
