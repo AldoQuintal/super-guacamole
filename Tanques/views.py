@@ -31,7 +31,7 @@ class TanquesListView(ListView):
 
 def registrar_tanque(request):
     tanquesList=Tanques.objects.all()
-    print(f'Tanques List: {tanquesList}')
+    print(f'Tanques List: {tanquesList.producto}')
     print("Registando Tanque ###")
     num_tanque=request.POST['txtnum_tanque']
     producto=request.POST['txtprodcuto']
