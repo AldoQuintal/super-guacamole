@@ -149,4 +149,4 @@ def registro_puntos(request):
     if tank_id == 1:
         tanque =tanqueT1.objects.create()
     
-    return redirect('tablaCubicaje/{0}'.format(id))
+    return redirect('/tablaCubicaje/{0}'.format(id))
