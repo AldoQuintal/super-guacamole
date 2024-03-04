@@ -139,6 +139,7 @@ def tabla_cubicaje(request, id):
 
 def registro_puntos(request):
     id = request.POST['id']
+    print(f'Id en registro puntos: {id}')
     altura=request.POST['txtaltura']
     volumen=request.POST['txtvolumen']
     
