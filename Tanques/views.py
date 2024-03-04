@@ -208,29 +208,30 @@ def registro_puntos(request):
 def delete_punto(request, id):
     tanque=Tanques.objects.get(id=id)
     tank_id = tanque.num_tanque
+    print(f'tank_id on delete: {tank_id}')
     if tank_id == 1:
         tank_delete = tanqueT1.objects.get(id=id)
         tank_delete.delete()
 
     return redirect('/')
 
-def eliminar_tanque(request, id):
-    tanque=Tanques.objects.get(id=id)
-    tank_id = tanque.num_tanque
-    # Eliminamos todos los registros creados anteriormente 
-    if tank_id == 1:
-        tank_delete = tanqueT1.objects.all()
-        tank_delete.delete()
-    if tank_id == 2:
-        tank_delete = tanqueT2.objects.all()
-        tank_delete.delete()
-    if tank_id == 3:
-        tank_delete = tanqueT3.objects.all()
-        tank_delete.delete()
-    if tank_id == 4:
-        tank_delete = tanqueT4.objects.all()
-        tank_delete.delete()
+# def eliminar_tanque(request, id):
+#     tanque=Tanques.objects.get(id=id)
+#     tank_id = tanque.num_tanque
+#     # Eliminamos todos los registros creados anteriormente 
+#     if tank_id == 1:
+#         tank_delete = tanqueT1.objects.all()
+#         tank_delete.delete()
+#     if tank_id == 2:
+#         tank_delete = tanqueT2.objects.all()
+#         tank_delete.delete()
+#     if tank_id == 3:
+#         tank_delete = tanqueT3.objects.all()
+#         tank_delete.delete()
+#     if tank_id == 4:
+#         tank_delete = tanqueT4.objects.all()
+#         tank_delete.delete()
     
-    tanque.delete()
+#     tanque.delete()
     
-    return redirect('/')
+#     return redirect('/')
