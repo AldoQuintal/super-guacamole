@@ -127,12 +127,13 @@ def editar_config(request):
 
 
 # Create your views here.
-def tabla_cubicaje(request):
+def tabla_cubicaje(request, id):
     tanque=Tanques.objects.all
     print(f'Tanque en el boton tablaCubicaje {tanque}')
     data={
         'titulo'    : 'Edición de tanque',
-        'cubicaje'   : tanque
+        'cubicaje'   : tanque, 
+        'id'    : id
     }
 
     return render(request, "tabla_cubicaje.html", data)
