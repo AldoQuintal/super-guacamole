@@ -24,14 +24,14 @@ class TanquesListView(ListView):
 
     def get_context_data(self, **kwargs):
         context=super().get_context_data(**kwargs)
-        print(f'Context : {context.get('object_list')}')
+        print(f'Context : {context['object_list']}')
         context['titulo'] = 'Registro de Tanques'
         return context
     
 
 def registrar_tanque(request):
     
-
+    
     print("Registando Tanque ###")
     num_tanque=request.POST['txtnum_tanque']
     producto=request.POST['txtprodcuto']
