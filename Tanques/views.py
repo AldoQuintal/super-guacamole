@@ -131,13 +131,14 @@ def tabla_cubicaje(request, id):
     tanque_id=Tanques.objects.get(id=id)
     tank_id = tanque_id.num_tanque
     print(f'tankid ------------- {tank_id}')
-    tanque=tanqueT1.objects.all()
-    print(f'Tanque en el boton tablaCubicaje {tanque}')
-    data={
-        'titulo'    : 'Edición de tanque',
-        'cubicaje'   : tanque, 
-        'id'    : id
-    }
+    if tank_id == 1:
+        tanque=tanqueT1.objects.all()
+        print("Tank_id = 1 entrando al primer tanque ########")
+        data={
+            'titulo'    : 'Edición de tanque',
+            'cubicaje'   : tanque, 
+            'id'    : id
+        }
 
     return render(request, "tabla_cubicaje.html", data)
 
