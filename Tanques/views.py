@@ -26,7 +26,9 @@ class TanquesListView(ListView):
         context=super().get_context_data(**kwargs)
         obj_list = context['object_list']
         print(f'Context : {context}')
-        print(f'obj_list : {obj_list.producto}')
+        print(f'obj_list : {obj_list}')
+        for a in obj_list:
+            print(f'indice a: {a}')
         context['titulo'] = 'Registro de Tanques'
         return context
     
