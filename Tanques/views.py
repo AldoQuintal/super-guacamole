@@ -166,7 +166,7 @@ def tabla_cubicaje(request, id):
             'cubicaje'   : tanque, 
             'id'    : id
         }
-        
+
     return render(request, "tabla_cubicaje.html", data)
 
 def registro_puntos(request):
@@ -181,5 +181,11 @@ def registro_puntos(request):
     print(f'tank_id: {tank_id}')
     if tank_id == 1:
         tanque =tanqueT1.objects.create(altura=altura, volumen= volumen)
+    if tank_id == 2:
+        tanque =tanqueT2.objects.create(altura=altura, volumen= volumen)
+    if tank_id == 3:
+        tanque =tanqueT3.objects.create(altura=altura, volumen= volumen)
+    if tank_id == 4:
+        tanque =tanqueT4.objects.create(altura=altura, volumen= volumen)
         
     return redirect('/tablaCubicaje/{0}'.format(id))
