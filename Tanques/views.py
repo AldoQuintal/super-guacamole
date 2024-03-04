@@ -20,7 +20,7 @@ class TanquesListView(ListView):
     template_name='tanques_view.html'
 
     def get_queryset(self):       
-        return Tanques.objects.all()
+        return Tanques.objects.all().order_by('num_tanque')
 
     def get_context_data(self, **kwargs):
         context=super().get_context_data(**kwargs)
