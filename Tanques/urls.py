@@ -17,7 +17,7 @@ urlpatterns = [
     path('consulta_entrega/', consulta_entrega),
     path('tablaCubicaje/<int:id>', tabla_cubicaje),
     path('registroTablaCubicaje/', registro_puntos),
-    path('eliminacionPuntos/', delete_punto),
+    path('eliminacionPuntos/<int:id>', delete_punto),
     
     #path('configuracion/', ConfigListView.as_view(), name='gestion_configuracion')
     
