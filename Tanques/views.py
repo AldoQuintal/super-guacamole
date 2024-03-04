@@ -28,7 +28,7 @@ class TanquesListView(ListView):
         print(f'Context : {context}')
         print(f'obj_list : {obj_list}')
         for a in obj_list:
-            print(f'indice a: {a}')
+            print(f'indice a: {a.num_tanque}')
         context['titulo'] = 'Registro de Tanques'
         return context
     
