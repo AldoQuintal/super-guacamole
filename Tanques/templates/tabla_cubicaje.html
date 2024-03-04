@@ -80,9 +80,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for c in object_list %}
+                            {% for c in tanque %}
                             <tr>
-
+                                <td>{{c.altura}}</td>
+                                <td>{{c.volumen}}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
