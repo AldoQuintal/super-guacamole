@@ -147,7 +147,7 @@ def tabla_cubicaje(request, id):
     tank_id = tanque_id.num_tanque
     print(f'tankid ------------- {tank_id}')
     if tank_id == 1:
-        tanque=tanqueT1.objects.all()
+        tanque=tanqueT1.objects.all().order_by('altura')
         print("Tank_id = 1 entrando al primer tanque ########")
         data={
             'titulo'    : 'Edición de tanque',
@@ -156,7 +156,7 @@ def tabla_cubicaje(request, id):
         }
 
     if tank_id == 2:
-        tanque=tanqueT2.objects.all()
+        tanque=tanqueT2.objects.all().order_by('altura')
         print("Tank_id = 2 entrando al Segundo tanque ########")
         data={
             'titulo'    : 'Edición de tanque',
@@ -165,7 +165,7 @@ def tabla_cubicaje(request, id):
         }
 
     if tank_id == 3:
-        tanque=tanqueT3.objects.all()
+        tanque=tanqueT3.objects.all().order_by('altura')
         print("Tank_id = 3 entrando al Tercer tanque ########")
         data={
             'titulo'    : 'Edición de tanque',
@@ -174,7 +174,7 @@ def tabla_cubicaje(request, id):
         }
 
     if tank_id == 4:
-        tanque=tanqueT4.objects.all()
+        tanque=tanqueT4.objects.all().order_by('altura')
         print("Tank_id = 4 entrando al cuarto tanque ########")
         data={
             'titulo'    : 'Edición de tanque',
