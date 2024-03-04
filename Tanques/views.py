@@ -127,8 +127,8 @@ def editar_config(request):
 
 
 # Create your views here.
-def tabla_cubicaje(request, id):
-    tanque=Tanques.objects.get(id=id)
+def tabla_cubicaje(request):
+    tanque=Tanques.objects.all
     print(f'Tanque en el boton tablaCubicaje {tanque}')
     data={
         'titulo'    : 'Edición de tanque',
@@ -139,7 +139,7 @@ def tabla_cubicaje(request, id):
 
 def registro_puntos(request):
     id = request.POST['id']
-    print(f'Id en registro puntos: {id}')
+    print(f'Id en registro puntos: ')
     altura=request.POST['txtaltura']
     volumen=request.POST['txtvolumen']
     

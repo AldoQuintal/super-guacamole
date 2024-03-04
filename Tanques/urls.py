@@ -13,7 +13,7 @@ urlpatterns = [
     path('registrarConfig/', registrar_config), 
     path('eliminacionConfig/<int:id>', eliminar_config ),
     path('editarConfig/', editar_config ),
-    path('edicionConfig/<int:id>', edit_config ),
+    path('edicionConfig/', edit_config ),
     path('consulta_entrega/', consulta_entrega),
     path('tablaCubicaje/<int:id>', tabla_cubicaje),
     path('registroTablaCubicaje/', registro_puntos),
