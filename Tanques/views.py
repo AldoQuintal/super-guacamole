@@ -138,7 +138,7 @@ def tabla_cubicaje(request, id):
     return render(request, "tabla_cubicaje.html", data)
 
 def registro_puntos(request):
-    id = int(request.POST['id'])
+    id = request.POST['id']
     altura=request.POST['txtaltura']
     volumen=request.POST['txtvolumen']
     
