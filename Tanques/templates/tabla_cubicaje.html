@@ -54,7 +54,7 @@
                 <div class="card">
                     <div class="card-body">
                         <form action="/registroTablaCubicaje/" method="POST">{% csrf_token %}
-                            <input value="{{cubicaje.id}}" name="id">
+                            <input value="{{id}}" name="id">
                             <div class="form-group">
                                 <input type="number" name="txtaltura" class="form-control" min="1" max="10" placeholder="Número tanque" autofocus required>
                             </div>
