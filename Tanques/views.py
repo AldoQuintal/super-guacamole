@@ -128,7 +128,7 @@ def editar_config(request):
 
 # Create your views here.
 def tabla_cubicaje(request, id):
-    tanque=Tanques.objects.all
+    tanque=tanqueT1.objects.all()
     print(f'Tanque en el boton tablaCubicaje {tanque}')
     data={
         'titulo'    : 'Edición de tanque',
