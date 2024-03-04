@@ -132,7 +132,7 @@ def tabla_cubicaje(request, id):
     print(f'Tanque en el boton tablaCubicaje {tanque}')
     data={
         'titulo'    : 'Edición de tanque',
-        'tanque'   : tanque
+        'cubicaje'   : tanque
     }
 
     return render(request, "tabla_cubicaje.html", data)
@@ -147,6 +147,6 @@ def registro_puntos(request):
     tank_id = tanque.num_tanque
     print(f'tank_id: {tank_id}')
     if tank_id == 1:
-        tanque =tanqueT1.objects.create()
-    
+        tanque =tanqueT1.objects.create(altura=altura, volumen= volumen)
+        
     return redirect('/tablaCubicaje/{0}'.format(id))
