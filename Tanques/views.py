@@ -41,7 +41,21 @@ def registrar_tanque(request):
 
 def eliminar_tanque(request, id):
     tanque=Tanques.objects.get(id=id)
-    print(f'id Tanque ++++++++++++ {tanque}')
+    tank_id = tanque.num_tanque
+    # Eliminamos todos los registros creados anteriormente 
+    if tank_id == 1:
+        tank_delete = tanqueT1.objects.all()
+        tank_delete.delete()
+    if tank_id == 2:
+        tank_delete = tanqueT2.objects.all()
+        tank_delete.delete()
+    if tank_id == 3:
+        tank_delete = tanqueT3.objects.all()
+        tank_delete.delete()
+    if tank_id == 4:
+        tank_delete = tanqueT4.objects.all()
+        tank_delete.delete()
+    
     tanque.delete()
     
     return redirect('/')
