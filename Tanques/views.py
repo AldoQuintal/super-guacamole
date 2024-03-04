@@ -7,7 +7,7 @@ from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanque
 # Create your views here.
 
 def home(request):
-    tanquesList=Tanques.objects.all()
+    tanquesList=Tanques.objects.all().order_by('num_tanque')
 
     data={
         'titulo'    : 'Regitro de Tanques',
