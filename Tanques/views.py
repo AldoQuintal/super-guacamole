@@ -27,7 +27,9 @@ class TanquesListView(ListView):
         context['titulo'] = 'Registro de Tanques'
         return context
     
+
 def registrar_tanque(request):
+    print("Registando Tanque ###")
     num_tanque=request.POST['txtnum_tanque']
     producto=request.POST['txtprodcuto']
     description=request.POST['txtdescripcion']
