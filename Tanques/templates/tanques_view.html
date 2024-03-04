@@ -55,7 +55,7 @@
                     <div class="card-body">
                         <form action="/registrarTanque/" method="POST">{% csrf_token %}
                             <div class="form-group">
-                                <input type="number" name="txtnum_tanque" class="form-control" minlength="1" maxlength="20" placeholder="Número tanque" autofocus required>
+                                <input type="number" name="txtnum_tanque" class="form-control" min="1" max="10" placeholder="Número tanque" autofocus required>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="txtprodcuto" class="form-control" minlength="3" maxlength="20" placeholder="Producto" autofocus required>
