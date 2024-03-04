@@ -125,3 +125,14 @@ def editar_config(request):
     #tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
     return redirect('/configuracion/')
 
+
+# Create your views here.
+def tabla_cubicaje(request, id):
+    tanque=Tanques.objects.get(id=id)
+    print(f'Tanque en el boton tablaCubicaje {tanque}')
+    data={
+        'titulo'    : 'Edición de tanque',
+        'tanque'   : tanque
+    }
+
+    return render(request, "tabla_cubicaje.html", data)
