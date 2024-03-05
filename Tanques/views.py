@@ -207,10 +207,14 @@ def registro_puntos(request):
 
 def delete_punto(request, id):
     
-    print(f'Data: {request}')
-    print(f'Id en delete: {id}')
-    tanque=Tanques.objects.all()
-    print(f'tanque: {tanque}')
+    try:
+        data = tanqueT1.objects.get(id=id)
+        if data:
+            print(f'Data: {data}')
+    except:
+        print(f'Error 400')
+    
+    
     #tank_id = tanque.num_tanque
     #print(f'tank_id on delete: {tank_id}')
     #if tank_id == 1:
