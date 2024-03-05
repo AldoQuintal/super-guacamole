@@ -37,6 +37,7 @@ class tanqueT1(models.Model):
 class tanqueT2(models.Model):
     altura = models.CharField()
     volumen = models.CharField()
+    id_ref = models.CharField()
 
     class Meta:
         db_table = 't2'
@@ -44,11 +45,13 @@ class tanqueT2(models.Model):
 class tanqueT3(models.Model):
     altura = models.CharField()
     volumen = models.CharField()
+    id_ref = models.CharField()
     class Meta:
         db_table = 't3'
 
 class tanqueT4(models.Model):
     altura = models.CharField()
     volumen = models.CharField()
+    id_ref = models.CharField()
     class Meta:
         db_table = 't4'

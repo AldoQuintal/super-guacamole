@@ -214,15 +214,42 @@ def delete_punto(request, id):
             tanque=Tanques.objects.get(id=data.id_ref)
             if tanque:
                 print(f'Tanque: {tanque}')
-            
+                data.delete()
     except:
         print(f'Error 400')
     
-    
-    #tank_id = tanque.num_tanque
-    #print(f'tank_id on delete: {tank_id}')
-    #if tank_id == 1:
-    #   tank_delete = tanqueT1.objects.get(id=id)
-    #   tank_delete.delete()
+    try:
+        data = tanqueT2.objects.get(id=id)
+        if data:
+            print(f'id_ref : {data.id_ref}')
+            tanque=Tanques.objects.get(id=data.id_ref)
+            if tanque:
+                print(f'Tanque: {tanque}')
+                data.delete()
+    except:
+        print(f'Error 400')
 
-    return redirect('/')
+    try:
+        data = tanqueT3.objects.get(id=id)
+        if data:
+            print(f'id_ref : {data.id_ref}')
+            tanque=Tanques.objects.get(id=data.id_ref)
+            if tanque:
+                print(f'Tanque: {tanque}')
+                data.delete()
+    except:
+        print(f'Error 400')
+    
+    try:
+        data = tanqueT4.objects.get(id=id)
+        if data:
+            print(f'id_ref : {data.id_ref}')
+            tanque=Tanques.objects.get(id=data.id_ref)
+            if tanque:
+                print(f'Tanque: {tanque}')
+                data.delete()
+    except:
+        print(f'Error 400')
+    
+
+    return redirect('/tablaCubicaje/{0}'.format(data.id_ref))
