@@ -211,6 +211,9 @@ def delete_punto(request, id):
         data = tanqueT1.objects.get(id=id)
         if data:
             print(f'id_ref : {data.id_ref}')
+            tanque=Tanques.objects.get(id=data.id_ref)
+            if tanque:
+                print(f'Tanque: {tanque}')
             
     except:
         print(f'Error 400')
