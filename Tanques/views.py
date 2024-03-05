@@ -207,23 +207,6 @@ def registro_puntos(request):
 
 def delete_punto(request, id):
     
-    tanques = Tanques.objects.all()
-    if tanques:
-        for a in tanques:
-            print(f'a in tanques... {a}')
-
-            tablas=tanqueT1.objects.get(id=id)
-            print(f'Tablas_id_ref: {tablas.id_ref}')
-            print(f'id tanqus: {a.id}')
-            if tablas.id_ref:
-                if int(tablas.id_ref) == int(a.id):
-                    print("Son iguales los registros ..!!!! ")
-            
-            tablas=tanqueT2.objects.get(id=id)
-            print(f'Tablas_id_ref: {tablas.id_ref}')
-            print(f'id tanqus: {a.id}')
-            if tablas.id_ref:
-                if int(tablas.id_ref) == int(a.id):
-                    print("Son iguales los registros ..!!!! ")
-
+    data = request.GET.get('q', '')
+    print(f'data. {data}')
     return redirect('/')
