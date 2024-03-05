@@ -6,6 +6,7 @@ from django.views.generic import ListView
 from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanqueT4
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from .forms import UserRegisterForm
 # Create your views here.
 
 def home(request):
@@ -227,13 +228,14 @@ def delete_punto(request, id_rex):
     
 def register(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = UserRegisterForm(request.POST)
         if form.is_valid():
             username = form.cleaned_data['username']
             messages.success(request, f'Usuario {username} ha sido creado')
+            return redirect('/')
         
     else:
-        form = UserCreationForm()
+        form = UserRegisterForm()
         
     context = { 'form' : form }
 
