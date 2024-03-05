@@ -4,6 +4,8 @@ from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanqueT4
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
 # Create your views here.
 
 def home(request):
@@ -223,9 +225,14 @@ def delete_punto(request, id_rex):
 
     return redirect('/')
     
-def logout(request):
-
-    data={
-        'titulo'    : 'Configuración',
-    }
-    return render(request, "logout.html", data)
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            messages.success(request, f'Usuario {username} ha sido creado')
+        
+        else:
+            form = UserCreationForm()
+        
+        context = { 'form' : form }
