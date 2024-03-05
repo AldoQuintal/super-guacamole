@@ -207,6 +207,6 @@ def registro_puntos(request):
 
 def delete_punto(request, id):
     
-    data = request.GET['id']
+    data = request.GET['value']
     print(f'data. {data}')
     return redirect('/')
