@@ -210,8 +210,7 @@ def delete_punto(request, id):
     try:
         data = tanqueT1.objects.get(id=id)
         if data:
-            idx = request.POST['id']
-            print(f'Data: {idx}')
+            print(f'id_ref : {data.id_ref}')
             
     except:
         print(f'Error 400')
