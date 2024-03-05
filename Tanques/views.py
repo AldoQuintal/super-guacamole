@@ -232,9 +232,9 @@ def register(request):
             username = form.cleaned_data['username']
             messages.success(request, f'Usuario {username} ha sido creado')
         
-        else:
-            form = UserCreationForm()
+    else:
+        form = UserCreationForm()
         
-        context = { 'form' : form }
+    context = { 'form' : form }
 
     return render(request, 'register.html', context)
