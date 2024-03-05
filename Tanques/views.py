@@ -206,7 +206,8 @@ def registro_puntos(request):
     return redirect('/tablaCubicaje/{0}'.format(id))
 
 def delete_punto(request, id):
-    
+    date = request.POST.get('id')
+    print(f'Date ................. {date}')
     try:
         data = tanqueT1.objects.get(id=id)
         if data:
