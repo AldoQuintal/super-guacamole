@@ -1,5 +1,5 @@
 from django.urls import path, include
-from Tanques.views import TanquesListView, eliminar_tanque, registrar_tanque, edit_tanque,delete_punto, editar_tanque, editar_config, edit_config, registrar_config ,eliminar_config ,configuracion, tabla_cubicaje, registro_puntos,ConfigListView
+from Tanques.views import TanquesListView, eliminar_tanque, registrar_tanque, logout, edit_tanque,delete_punto, editar_tanque, editar_config, edit_config, registrar_config ,eliminar_config ,configuracion, tabla_cubicaje, registro_puntos,ConfigListView
 from api.views import consulta_entrega
 
 
@@ -18,6 +18,7 @@ urlpatterns = [
     path('tablaCubicaje/<int:id_rex>', tabla_cubicaje),
     path('registroTablaCubicaje/', registro_puntos),
     path('tablaCubicaje/eliminacionPuntos/<int:id_rex>', delete_punto),
+    path('logout/', logout),
     
     #path('configuracion/', ConfigListView.as_view(), name='gestion_configuracion')
     

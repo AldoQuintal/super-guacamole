@@ -223,3 +223,9 @@ def delete_punto(request, id_rex):
 
     return redirect('/')
     
+def logout(request):
+
+    data={
+        'titulo'    : 'Configuración',
+    }
+    return render(request, "logout.html", data)
