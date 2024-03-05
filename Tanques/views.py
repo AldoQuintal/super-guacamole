@@ -217,5 +217,11 @@ def delete_punto(request, id):
             print(f'id tanqus: {a.id}')
             if int(tablas.id_ref) == int(a.id):
                 print("Son iguales los registros ..!!!! ")
-
+            
+            tablas=tanqueT2.objects.get(id=id)
+            print(f'Tablas_id_ref: {tablas.id_ref}')
+            print(f'id tanqus: {a.id}')
+            if int(tablas.id_ref) == int(a.id):
+                print("Son iguales los registros ..!!!! ")
+                
     return redirect('/')
