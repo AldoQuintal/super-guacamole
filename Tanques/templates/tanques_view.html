@@ -32,10 +32,8 @@
               </li>
             {% if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <form action="{% url 'logout' %}" method="post">
-                        {% csrf_token %} #csrf_token is very important to have as this is POST request
-                        <button type="submit">Logout</button>
-                    </form>
+                    {% csrf_token %}
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>{% csrf_token %}
 
                 </li>
             {% else %}
