@@ -205,6 +205,6 @@ def registro_puntos(request):
         
     return redirect('/tablaCubicaje/{0}'.format(id))
 
-def delete_punto(request, id, id_rex):
+def delete_punto(request, id_rex):
     print(f'Id_rex, {id_rex}')
     
