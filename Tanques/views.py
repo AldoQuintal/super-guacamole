@@ -195,7 +195,7 @@ def registro_puntos(request):
     tank_id = tanque.num_tanque
     print(f'tank_id: {tank_id}')
     if tank_id == 1:
-        tanque =tanqueT1.objects.create(altura=altura, volumen= volumen)
+        tanque =tanqueT1.objects.create(altura=altura, volumen= volumen, id_ref=id)
     if tank_id == 2:
         tanque =tanqueT2.objects.create(altura=altura, volumen= volumen)
     if tank_id == 3:
