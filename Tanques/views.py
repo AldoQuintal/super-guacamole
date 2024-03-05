@@ -206,15 +206,15 @@ def registro_puntos(request):
     return redirect('/tablaCubicaje/{0}'.format(id))
 
 def delete_punto(request, id):
-    ids = request.POST['id']
-    print(f'ids: {ids}')
+
     print(f'Id en delete: {id}')
-    tanque=Tanques.objects.get(id=id)
-    tank_id = tanque.num_tanque
-    print(f'tank_id on delete: {tank_id}')
-    if tank_id == 1:
-        tank_delete = tanqueT1.objects.get(id=id)
-        tank_delete.delete()
+    tanque=Tanques.objects.all()
+    print(f'tanque: {tanque}')
+    #tank_id = tanque.num_tanque
+    #print(f'tank_id on delete: {tank_id}')
+    #if tank_id == 1:
+     #   tank_delete = tanqueT1.objects.get(id=id)
+     #   tank_delete.delete()
 
     return redirect('/')
 
