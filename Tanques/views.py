@@ -197,16 +197,20 @@ def registro_puntos(request):
     if tank_id == 1:
         tanque =tanqueT1.objects.create(altura=altura, volumen= volumen, id_ref=id)
     if tank_id == 2:
-        tanque =tanqueT2.objects.create(altura=altura, volumen= volumen)
+        tanque =tanqueT2.objects.create(altura=altura, volumen= volumen, id_ref=id)
     if tank_id == 3:
-        tanque =tanqueT3.objects.create(altura=altura, volumen= volumen)
+        tanque =tanqueT3.objects.create(altura=altura, volumen= volumen, id_ref=id)
     if tank_id == 4:
-        tanque =tanqueT4.objects.create(altura=altura, volumen= volumen)
+        tanque =tanqueT4.objects.create(altura=altura, volumen= volumen, id_ref=id)
         
     return redirect('/tablaCubicaje/{0}'.format(id))
 
 def delete_punto(request, id_rex):
-    print(f'Id_rex, {id_rex}')
+    tanque = Tanques.objects.all()
+    for a in tanque:
+        print(f'a.id : {a.id}')
+        tablas = tanqueT1.objects.get(id_ref=a.id)
+        print(f'tablas: {tablas}')
 
     return redirect('/')
     
