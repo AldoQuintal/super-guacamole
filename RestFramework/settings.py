@@ -27,8 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-LOGIN_REDIRECT_URL = 'tanques/'
-LOGOUT_REDIRECT_URL = 'login/'
+LOGIN_REDIRECT_URL = '/tanques/'
+LOGOUT_REDIRECT_URL = '/login/'
 
 
 
