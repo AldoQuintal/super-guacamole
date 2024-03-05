@@ -40,7 +40,7 @@ def registrar_tanque(request):
     altura=request.POST['txtaltura']
 
     tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
-    return redirect('/')
+    return redirect('/tanques/')
 
 def eliminar_tanque(request, id):
     tanque=Tanques.objects.get(id=id)
@@ -61,7 +61,7 @@ def eliminar_tanque(request, id):
     
     tanque.delete()
     
-    return redirect('/')
+    return redirect('/tanques/')
 
 
 def edit_tanque(request, id):
@@ -91,7 +91,7 @@ def editar_tanque(request):
     tanque.save()
 
     #tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
-    return redirect('/')
+    return redirect('/tanques/')
 
 # Create your views here.
 def configuracion(request):
@@ -224,7 +224,7 @@ def delete_punto(request, id_rex):
             if int(tablas.id_ref) == int(a.id):
                 print("Tanque 2 paso datos")
 
-    return redirect('/')
+    return redirect('/tanques/')
     
 def register(request):
     if request.method == 'POST':
@@ -233,7 +233,7 @@ def register(request):
             form.save()
             username = form.cleaned_data['username']
             messages.success(request, f'Usuario {username} ha sido creado')
-            return redirect('/')
+            return redirect('/tanques/')
         
     else:
         form = UserRegisterForm()

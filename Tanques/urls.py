@@ -5,7 +5,7 @@ from django.contrib.auth.views import LoginView, LogoutView
 
 
 urlpatterns = [
-    path('', TanquesListView.as_view(), name='gestion_tanques'),
+    path('tanques/', TanquesListView.as_view(), name='gestion_tanques'),
     path('registrarTanque/', registrar_tanque),
     path('eliminacionTanques/<int:id>', eliminar_tanque ),
     path('edicionTanques/<int:id>', edit_tanque ),
