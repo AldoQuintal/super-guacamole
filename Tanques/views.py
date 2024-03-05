@@ -207,4 +207,6 @@ def registro_puntos(request):
 
 def delete_punto(request, id_rex):
     print(f'Id_rex, {id_rex}')
+
+    return redirect('/')
     
