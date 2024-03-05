@@ -213,10 +213,10 @@ def delete_punto(request, id):
             print(f'id_ref : {data.id_ref}')
             tanque=Tanques.objects.get(id=data.id_ref)
             if tanque:
-                print(f'Tanque: {tanque}')
+                print(f'Tanque_____________________________: {tanque}')
                 data.delete()
     except:
-        print(f'Error 400')
+        print(f'Fallo borrar Tanque 1')
     
     try:
         data = tanqueT2.objects.get(id=id)
@@ -224,10 +224,10 @@ def delete_punto(request, id):
             print(f'id_ref : {data.id_ref}')
             tanque=Tanques.objects.get(id=data.id_ref)
             if tanque:
-                print(f'Tanque: {tanque}')
+                print(f'Tanque_____________________________: {tanque}')
                 data.delete()
     except:
-        print(f'Error 400')
+        print(f'Fallo borrar Tanque 2')
 
     try:
         data = tanqueT3.objects.get(id=id)
@@ -235,10 +235,10 @@ def delete_punto(request, id):
             print(f'id_ref : {data.id_ref}')
             tanque=Tanques.objects.get(id=data.id_ref)
             if tanque:
-                print(f'Tanque: {tanque}')
+                print(f'Tanque_____________________________: {tanque}')
                 data.delete()
     except:
-        print(f'Error 400')
+        print(f'Fallo borrar Tanque 3')
     
     try:
         data = tanqueT4.objects.get(id=id)
@@ -246,10 +246,10 @@ def delete_punto(request, id):
             print(f'id_ref : {data.id_ref}')
             tanque=Tanques.objects.get(id=data.id_ref)
             if tanque:
-                print(f'Tanque: {tanque}')
+                print(f'Tanque_____________________________: {tanque}')
                 data.delete()
     except:
-        print(f'Error 400')
+        print(f'Fallo borrar Tanque 4')
     
 
     return redirect('/tablaCubicaje/{0}'.format(data.id_ref))
