@@ -209,8 +209,15 @@ def delete_punto(request, id_rex):
     tanque = Tanques.objects.all()
     for a in tanque:
         print(f'a.id : {a.id}')
-        tablas = tanqueT1.objects.get(id_ref=a.id)
-        print(f'tablas: {tablas}')
+        tablas = tanqueT1.objects.get(id=id_rex)
+        print(f'tablas1: {tablas}')
+        if tablas.id_ref == a.id:
+            print("Tanque 1 paso datos")
+        
+        tablas = tanqueT2.objects.get(id=id_rex)
+        print(f'tablas2: {tablas}')
+        if tablas.id_ref == a.id:
+            print("Tanque 2 paso datos")
 
     return redirect('/')
     
