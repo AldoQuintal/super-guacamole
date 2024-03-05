@@ -30,6 +30,7 @@ class configuration(models.Model):
 class tanqueT1(models.Model):
     altura = models.CharField()
     volumen = models.CharField()
+    id_ref = models.CharField()
     class Meta:
         db_table = 't1'
 
