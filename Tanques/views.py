@@ -142,8 +142,8 @@ def editar_config(request):
 
 
 # Create your views here.
-def tabla_cubicaje(request, id):
-    tanque_id=Tanques.objects.get(id=id)
+def tabla_cubicaje(request, id_rex):
+    tanque_id=Tanques.objects.get(id=id_rex)
     tank_id = tanque_id.num_tanque
     print(f'tankid ------------- {tank_id}')
     if tank_id == 1:
@@ -152,7 +152,7 @@ def tabla_cubicaje(request, id):
         data={
             'titulo'    : 'Edición de tanque',
             'cubicaje'   : tanque, 
-            'id'    : id
+            'id'    : id_rex
         }
 
     if tank_id == 2:
@@ -161,7 +161,7 @@ def tabla_cubicaje(request, id):
         data={
             'titulo'    : 'Edición de tanque',
             'cubicaje'   : tanque, 
-            'id'    : id
+            'id'    : id_rex
         }
 
     if tank_id == 3:
@@ -170,7 +170,7 @@ def tabla_cubicaje(request, id):
         data={
             'titulo'    : 'Edición de tanque',
             'cubicaje'   : tanque, 
-            'id'    : id
+            'id'    : id_rex
         }
 
     if tank_id == 4:
@@ -179,7 +179,7 @@ def tabla_cubicaje(request, id):
         data={
             'titulo'    : 'Edición de tanque',
             'cubicaje'   : tanque, 
-            'id'    : id
+            'id'    : id_rex
         }
 
     return render(request, "tabla_cubicaje.html", data)
@@ -205,8 +205,6 @@ def registro_puntos(request):
         
     return redirect('/tablaCubicaje/{0}'.format(id))
 
-def delete_punto(request, id):
+def delete_punto(request, id, id_rex):
+    print(f'Id_rex, {id_rex}')
     
-    data = request.POST['id']
-    print(f'data. {data}')
-    return redirect('/')
