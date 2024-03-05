@@ -206,51 +206,10 @@ def registro_puntos(request):
     return redirect('/tablaCubicaje/{0}'.format(id))
 
 def delete_punto(request, id):
-    date = request.POST.get('id')
-    print(f'Date ................. {date}')
-    try:
-        data = tanqueT1.objects.get(id=id)
-        if data:
-            print(f'id_ref : {data.id_ref}')
-            tanque=Tanques.objects.get(id=data.id_ref)
-            if tanque:
-                print(f'Tanque_____________________________: {tanque}')
-                data.delete()
-    except:
-        print(f'Fallo borrar Tanque 1')
     
-    try:
-        data = tanqueT2.objects.get(id=id)
-        if data:
-            print(f'id_ref : {data.id_ref}')
-            tanque=Tanques.objects.get(id=data.id_ref)
-            if tanque:
-                print(f'Tanque_____________________________: {tanque}')
-                data.delete()
-    except:
-        print(f'Fallo borrar Tanque 2')
-
-    try:
-        data = tanqueT3.objects.get(id=id)
-        if data:
-            print(f'id_ref : {data.id_ref}')
-            tanque=Tanques.objects.get(id=data.id_ref)
-            if tanque:
-                print(f'Tanque_____________________________: {tanque}')
-                data.delete()
-    except:
-        print(f'Fallo borrar Tanque 3')
-    
-    try:
-        data = tanqueT4.objects.get(id=id)
-        if data:
-            print(f'id_ref : {data.id_ref}')
-            tanque=Tanques.objects.get(id=data.id_ref)
-            if tanque:
-                print(f'Tanque_____________________________: {tanque}')
-                data.delete()
-    except:
-        print(f'Fallo borrar Tanque 4')
-    
-
-    return redirect('/tablaCubicaje/{0}'.format(data.id_ref))
+    tanques = Tanques.objects.all()
+    if tanques:
+        for a in tanques:
+            print(f'a in tanques... {a}')
+            
+    return redirect('/')
