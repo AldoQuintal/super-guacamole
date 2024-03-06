@@ -7,10 +7,12 @@
         <div class="col-md-4 offset-md-4">
             <h2>Login</h2>
             <div class="card">
+                {% if not error %}
                 <div class="card-body">
                     <div class="alert alert-danger" role="alert">
                     {{ error }}
                     </div>
+                {% endif %}
                     <form class="form" method="POST">
                         {% csrf_token %}
                         <div class="mb-3">
