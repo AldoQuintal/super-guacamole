@@ -14,7 +14,7 @@ urlpatterns = [
     path('registrarConfig/', registrar_config), 
     path('eliminacionConfig/<int:id>', eliminar_config ),
     path('editarConfig/', editar_config ),
-    path('configuracion/edicionConfig/', edit_config ),
+    path('configuracion/edicionConfig/<int:id>', edit_config ),
     path('consulta_entrega/', consulta_entrega),
     path('tanques/tablaCubicaje/<int:id_rex>', tabla_cubicaje),
     path('registroTablaCubicaje/', registro_puntos),
