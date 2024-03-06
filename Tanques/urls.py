@@ -1,11 +1,11 @@
 from django.urls import path, include
-from Tanques.views import TanquesListView, eliminar_tanque, register, registrar_tanque, edit_tanque,delete_punto, editar_tanque, editar_config, edit_config, registrar_config ,eliminar_config ,configuracion, tabla_cubicaje, registro_puntos,ConfigListView
+from Tanques.views import home, eliminar_tanque, register, registrar_tanque, edit_tanque,delete_punto, editar_tanque, editar_config, edit_config, registrar_config ,eliminar_config ,configuracion, tabla_cubicaje, registro_puntos,ConfigListView
 from api.views import consulta_entrega
 from django.contrib.auth.views import LoginView, LogoutView
 
 
 urlpatterns = [
-    path('tanques/', TanquesListView.as_view(), name='gestion_tanques'),
+    path('tanques/', home),
     path('registrarTanque/', registrar_tanque),
     path('tanques/eliminacionTanques/<int:id>', eliminar_tanque ),
     path('tanques/edicionTanques/<int:id>', edit_tanque ),
