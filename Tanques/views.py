@@ -7,8 +7,9 @@ from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanque
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
-
+@login_required
 def home(request):
     tanquesList=Tanques.objects.all().order_by('num_tanque')
 
@@ -17,7 +18,7 @@ def home(request):
         'tanques'   : tanquesList
     }
     return render(request, "tanques_view.html", data)
-
+@login_required
 class TanquesListView(ListView):
     model=Tanques
     template_name='tanques_view.html'
@@ -63,7 +64,7 @@ def eliminar_tanque(request, id):
     
     return redirect('/tanques/')
 
-
+@login_required
 def edit_tanque(request, id):
     tanque=Tanques.objects.get(id=id)
     data={
@@ -94,6 +95,7 @@ def editar_tanque(request):
     return redirect('/tanques/')
 
 # Create your views here.
+@login_required
 def configuracion(request):
     configList=configuration.objects.all()
 
@@ -103,6 +105,7 @@ def configuracion(request):
     }
     return render(request, "config_view.html", data)
 
+@login_required
 class ConfigListView(ListView):
     model=configuration
     template_name='config_view.html'
@@ -120,6 +123,7 @@ def eliminar_config(request, id):
 
     return redirect('/configuracion/')
 
+@login_required
 def edit_config(request, id):
     conf=configuration.objects.get(id=id)
     data={
@@ -145,6 +149,7 @@ def editar_config(request):
 
 
 # Create your views here.
+@login_required
 def tabla_cubicaje(request, id_rex):
     tanque_id=Tanques.objects.get(id=id_rex)
     tank_id = tanque_id.num_tanque
@@ -225,7 +230,8 @@ def delete_punto(request, id_rex):
                 print("Tanque 2 paso datos")
 
     return redirect('/tanques/')
-    
+
+
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
