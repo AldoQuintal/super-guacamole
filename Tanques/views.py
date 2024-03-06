@@ -3,7 +3,7 @@ from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanqueT4
+from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanqueT4, inventarios
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
@@ -11,6 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+
 
 # Create your views here.
 @login_required
@@ -301,3 +302,14 @@ def signin(request):
         else:
             login(request, user)
             return redirect('/tanques/')
+
+# Create your views here.
+@login_required
+def consulta_inventarios(request):
+    invent=inventarios.objects.all()
+
+    data={
+        'titulo'    : 'Inventarios',
+        'config'   : invent
+    }
+    return render(request, "inventarios.html", data)

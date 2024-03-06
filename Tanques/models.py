@@ -27,6 +27,17 @@ class configuration(models.Model):
     num_puntos = models.CharField(max_length=10, verbose_name="Número de puntos a Configurar")
     num_entregas = models.CharField(max_length=10, verbose_name="Número de entregas a guardar")
 
+class inventarios(models.Model):
+    vr_tanque = models.CharField(max_length=10)
+    vr_fecha = models.CharField(max_length=20)
+    vr_volumen = models.CharField(max_length=20)
+    vr_vol_ct = models.CharField(max_length=20)
+    vr_agua = models.CharField(max_length=20)
+    vr_temp = models.CharField(max_length=20)
+
+    class Meta:
+        db_table = 'inventarios'
+
 class tanqueT1(models.Model):
     altura = models.CharField()
     volumen = models.CharField()
