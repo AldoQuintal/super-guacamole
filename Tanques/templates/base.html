@@ -33,7 +33,7 @@
                     <a class="nav-link" href="/configuracion/">Configuración</a>
                   </li>
                 <li class="nav-item">
-                  <a href="/accounts/logout/" class="nav-link">Logout</a>
+                  <a href="/accounts/logout/" class="nav-link">{% csrf_token %}Logout</a>
                 </li>
                 {% else %}
                   <li class="nav-item">
