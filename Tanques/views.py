@@ -9,6 +9,9 @@ from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
 # Create your views here.
 @login_required
 def home(request):
@@ -233,19 +236,36 @@ def delete_punto(request, id_rex):
     return redirect('/tanques/')
 
 
-def register(request):
-    if request.method == 'POST':
-        form = UserRegisterForm(request.POST)
-        if form.is_valid():
-            form.save()
-            login(request, form)
-            username = form.cleaned_data['username']
-            messages.success(request, f'Usuario {username} ha sido creado')
-            return redirect('/tanques/')
+# def register(request):
+#     if request.method == 'POST':
+#         form = UserRegisterForm(request.POST)
+#         if form.is_valid():
+#             form.save()
+#             login(request, form)
+#             username = form.cleaned_data['username']
+#             messages.success(request, f'Usuario {username} ha sido creado')
+#             return redirect('/tanques/')
         
-    else:
-        form = UserRegisterForm()
+#     else:
+#         form = UserRegisterForm()
         
-    context = { 'form' : form }
+#     context = { 'form' : form }
 
-    return render(request, 'register.html', context)
+#     return render(request, 'register.html', context)
+
+def register(request):
+    if request.method == 'GET':
+        return render(request, 'register.html', {
+            'form' : UserRegisterForm
+        })
+    else:
+        if request.POST['password1'] == request.POST['password2']:
+            try:
+                 #Registrando usuario
+                user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
+                user.save()
+            
+            except:
+                return HttpResponse('Username already exists')
+
+        return HttpResponse('Password do not match')
