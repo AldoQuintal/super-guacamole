@@ -4,11 +4,11 @@ from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
 from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanqueT4
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, logout
+from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 
@@ -279,6 +279,25 @@ def register(request):
                 'error': 'Password do not match'
             })
 
+
 def signout(request):
     logout(request)
     return redirect('login')
+
+def signin(request):
+    if request.method == 'GET':
+        return render(request, 'login.html', {
+        'form' : AuthenticationForm,
+        'titulo' : 'Login', 
+        })  
+    else:
+        user = authenticate(request, username=request.POST['username'], password=request.POST['password'])
+        if user is None:
+            return render(request, 'login.html', {
+            'form' : AuthenticationForm,
+            'titulo' : 'Login', 
+            'error': 'Username or Password is not correct'
+            }) 
+        else:
+            login(request, user)
+            return redirect('/tanques/')
