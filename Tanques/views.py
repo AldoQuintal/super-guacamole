@@ -8,7 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login
+from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
 from django.http import HttpResponse
 
@@ -277,4 +277,7 @@ def register(request):
                 'form' : UserRegisterForm, 
                 'error': 'Password do not match'
             })
-        
+
+def signout(request):
+    logout(request)
+    return redirect('accounts/login')
