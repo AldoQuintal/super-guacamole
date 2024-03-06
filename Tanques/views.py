@@ -18,7 +18,7 @@ def home(request):
         'tanques'   : tanquesList
     }
     return render(request, "tanques_view.html", data)
-@login_required
+
 class TanquesListView(ListView):
     model=Tanques
     template_name='tanques_view.html'
