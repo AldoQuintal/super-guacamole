@@ -280,4 +280,4 @@ def register(request):
 
 def signout(request):
     logout(request)
-    return redirect('accounts/login')
+    return redirect('')
