@@ -31,18 +31,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/configuracion/">Configuración</a>
                   </li>
-                <li class="nav-item">
+                <li class="nav-item ms-auto">
                   <form method="post" action="{% url 'logout' %}">
                       {% csrf_token %}
                       <button type="submit">logout</button>
                   </form>
                 </li>
                 {% else %}
-                  <li class="nav-item">
+                  <li class="nav-item ms-auto">
                     <a class="nav-link" href="{% url 'login' %}">Login</a>
                   </li>
               
-                  <li class="nav-item">
+                  <li class="nav-item ms-auto">
                     <a class="nav-link" href="/accounts/register/">Register</a>
                   </li>
                 {% endif %}
