@@ -2,15 +2,20 @@
 
 {% block content %}
     <main class="container py-4">
-        <div class="card">
-            <div class="card-body">
-                {{ error }}
-                <form class="form" method="POST">
-                    {% csrf_token %}
-                    {{ form.as_p}}
-                    <button type="submit" id="submit" class="btn btn-success btn-block text-white">Registrarse</button>
-                </form>
-            </div>
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <h2>Signup</h2>
+                <div class="card">
+                    <div class="card-body">
+                        {{ error }}
+                        <form class="form" method="POST">
+                            {% csrf_token %}
+                            {{ form.as_p}}
+                            <button type="submit" id="submit" class="btn btn-success btn-block text-white">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div> 
         </div>
     </main>
 
