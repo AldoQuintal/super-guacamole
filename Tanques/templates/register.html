@@ -10,8 +10,24 @@
                         {{ error }}
                         <form class="form" method="POST">
                             {% csrf_token %}
-                            {{ form.as_p}}
-                            <button type="submit" id="submit" class="btn btn-success btn-block text-white">Registrarse</button>
+                            <div class="mb-3">
+                                <label for="username">Username:</label>
+                                <input type="text" name="username" id="username" class="form-control" placeholder="Write your username">
+                            </div>
+                            <div class="mb-3">
+                                <label for="id_email">Email:</label>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Write your Email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password1">Password:</label>
+                                <input type="password" name="password1" id="password1" class="form-control" placeholder="Write your password">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password2">Confirm your Password:</label>
+                                <input type="passwork" name="password2" id="password2" class="form-control" placeholder="Confirm your Password">
+                            </div>
+
+                            <button type="submit" id="submit" class="btn btn-secondary">Signup</button>
                         </form>
                     </div>
                 </div>
