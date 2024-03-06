@@ -29,18 +29,23 @@
             <li class="nav-item">
                 <a class="nav-link" href="/configuracion/">Configuración</a>
               </li>
-                <li class="nav-item">
-                    <form method="post" action="{% url 'logout' %}">
-                        {% csrf_token %}
-                        <button type="submit">logout</button>
-                    </form>
-                </li>
+                
                 <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">Login</a>
                 </li>
+                
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="/accounts/register/">Register</a>
+                  <form method="post" action="{% url 'logout' %}">
+                      {% csrf_token %}
+                      <button type="submit">logout</button>
+                  </form>
                 </li>
+                {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="/accounts/register/">Register</a>
+                  </li>
+                {% endif %}
           </ul>
         </div>
       </nav>
