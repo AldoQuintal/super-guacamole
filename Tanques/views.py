@@ -8,6 +8,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login
 # Create your views here.
 @login_required
 def home(request):
@@ -237,6 +238,7 @@ def register(request):
         form = UserRegisterForm(request.POST)
         if form.is_valid():
             form.save()
+            login(request, form)
             username = form.cleaned_data['username']
             messages.success(request, f'Usuario {username} ha sido creado')
             return redirect('/tanques/')
