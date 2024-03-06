@@ -256,7 +256,8 @@ def delete_punto(request, id_rex):
 def register(request):
     if request.method == 'GET':
         return render(request, 'register.html', {
-            'form' : UserRegisterForm
+            'form' : UserRegisterForm,
+            'titulo': 'Register'
         })
     else:
         if request.POST['password1'] == request.POST['password2']:
