@@ -268,6 +268,13 @@ def register(request):
                 return redirect('/tanques/')
             
             except:
-                return HttpResponse('Username already exists')
+                return render(request, 'register.html', {
+                'form' : UserRegisterForm, 
+                'error': 'Username already exists'
+            })
 
-        return HttpResponse('Password do not match')
+        return render(request, 'register.html', {
+                'form' : UserRegisterForm, 
+                'error': 'Password do not match'
+            })
+        
