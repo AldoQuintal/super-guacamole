@@ -264,6 +264,8 @@ def register(request):
                  #Registrando usuario
                 user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
                 user.save()
+                login(request, user)
+                return redirect('/tanques/')
             
             except:
                 return HttpResponse('Username already exists')
