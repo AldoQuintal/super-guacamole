@@ -212,16 +212,16 @@ def registro_puntos(request):
     print(f'tank_id: {tank_id}')
     if tank_id == 1:
         tanque =tanqueT1.objects.create(altura=altura, volumen= volumen, id_ref=id)
-        return redirect('/tablaCubicajeT1/{0}'.format(id))
+        return redirect('/registroTablaCubicajeT1/{0}'.format(id))
     if tank_id == 2:
         tanque =tanqueT2.objects.create(altura=altura, volumen= volumen, id_ref=id)
-        return redirect('/tablaCubicajeT2/{0}'.format(id))
+        return redirect('/registroTablaCubicajeT2/{0}'.format(id))
     if tank_id == 3:
         tanque =tanqueT3.objects.create(altura=altura, volumen= volumen, id_ref=id)
-        return redirect('/tablaCubicajeT3/{0}'.format(id))
+        return redirect('/registroTablaCubicajeT3/{0}'.format(id))
     if tank_id == 4:
         tanque =tanqueT4.objects.create(altura=altura, volumen= volumen, id_ref=id)
-        return redirect('/tablaCubicajeT4/{0}'.format(id))
+        return redirect('/registroTablaCubicajeT4/{0}'.format(id))
         
     
 
