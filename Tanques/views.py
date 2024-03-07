@@ -226,7 +226,7 @@ def registro_puntos(request):
     if tank_id == 1:
         punto = tanqueT1.objects.all()
         for i in punto:
-            if i.altura == altura:
+            if int(i.altura) == int(altura):
                 data={
                 'titulo'    : 'Tablas T1',
                 'cubicaje'   : punto,
