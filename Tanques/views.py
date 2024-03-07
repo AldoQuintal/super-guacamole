@@ -138,6 +138,7 @@ def edit_config(request, id):
 
     return render(request, "edicionConfig.html", data)
 
+## Función para editar la configuración de los tanques ## 
 def editar_config(request):
     id = int(request.POST['id'])
     num_puntos=request.POST['txtnum_puntos']
@@ -152,7 +153,7 @@ def editar_config(request):
     #tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
     return redirect('/configuracion/')
 
-
+## Crea el render de las respectivas tablas de cubicaje segun el tanque ##
 # Create your views here.
 @login_required
 def tabla_cubicaje(request, id_rex):
@@ -163,7 +164,7 @@ def tabla_cubicaje(request, id_rex):
         tanque=tanqueT1.objects.all().order_by('altura')
         print("Tank_id = 1 entrando al primer tanque ########")
         data={
-            'titulo'    : 'Edición de tanque',
+            'titulo'    : 'Tablas T1',
             'cubicaje'   : tanque, 
             'id'    : id_rex
         }
@@ -173,7 +174,7 @@ def tabla_cubicaje(request, id_rex):
         tanque=tanqueT2.objects.all().order_by('altura')
         print("Tank_id = 2 entrando al Segundo tanque ########")
         data={
-            'titulo'    : 'Edición de tanque',
+            'titulo'    : 'Tablas T2',
             'cubicaje'   : tanque, 
             'id'    : id_rex
         }
@@ -183,7 +184,7 @@ def tabla_cubicaje(request, id_rex):
         tanque=tanqueT3.objects.all().order_by('altura')
         print("Tank_id = 3 entrando al Tercer tanque ########")
         data={
-            'titulo'    : 'Edición de tanque',
+            'titulo'    : 'Tablas T3',
             'cubicaje'   : tanque, 
             'id'    : id_rex
         }
@@ -193,13 +194,13 @@ def tabla_cubicaje(request, id_rex):
         tanque=tanqueT4.objects.all().order_by('altura')
         print("Tank_id = 4 entrando al cuarto tanque ########")
         data={
-            'titulo'    : 'Edición de tanque',
+            'titulo'    : 'Tablas T4',
             'cubicaje'   : tanque, 
             'id'    : id_rex
         }
         return render(request, "tabla_cubicaje_t4.html", data)
     
-
+## Función para registrar puntos en la tabla de cubicaje ##
 def registro_puntos(request):
     id = request.POST['id']
     print(f'Id en registro puntos: {id}')
@@ -224,43 +225,17 @@ def registro_puntos(request):
         return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
         
     
-
-def delete_punto(request, id_rex):
-    tanque = Tanques.objects.all()
-    for a in tanque:
-        print(f'a.id : {a.id}')
-        tablas = tanqueT1.objects.get(id=id_rex)
-        print(f'tablas1: {tablas}')
-        if tablas.id_ref:
-            if int(tablas.id_ref) == int(a.id):
-                print("Tanque 1 paso datos")
-        
-        tablas = tanqueT2.objects.get(id=id_rex)
-        print(f'tablas2: {tablas}')
-        if tablas.id_ref:
-            if int(tablas.id_ref) == int(a.id):
-                print("Tanque 2 paso datos")
-
+## Función para borrar puntos de la tabla de cubicaje ##
+def delete_punto_t1(request, id_rex):
+    id = request.POST['id']
+    print(f'Id en Delete: {id}')
+    punto=tanqueT1.objects.get(id=id_rex)
+    punto.delete()
     return redirect('/tanques/')
 
 
-# def register(request):
-#     if request.method == 'POST':
-#         form = UserRegisterForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             login(request, form)
-#             username = form.cleaned_data['username']
-#             messages.success(request, f'Usuario {username} ha sido creado')
-#             return redirect('/tanques/')
-        
-#     else:
-#         form = UserRegisterForm()
-        
-#     context = { 'form' : form }
 
-#     return render(request, 'register.html', context)
-
+###### Sistema de Registro, Login, Logout ######
 def register(request):
     if request.method == 'GET':
         return render(request, 'register.html', {
