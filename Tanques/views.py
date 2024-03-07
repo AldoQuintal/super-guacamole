@@ -47,6 +47,7 @@ def registrar_tanque(request):
 
     tanq_list = Tanques.objects.all()
     for i in tanq_list:
+        print(f'i.numtanque: {i.num_tanque}, num_tanque: {num_tanque}')
         if i.num_tanque == num_tanque:
 
             data={
