@@ -167,7 +167,7 @@ def tabla_cubicaje(request, id_rex):
             'cubicaje'   : tanque, 
             'id'    : id_rex
         }
-        return render(request, "tabla_cubicajeT1.html", data)
+        return render(request, "tabla_cubicaje_t1.html", data)
 
     if tank_id == 2:
         tanque=tanqueT2.objects.all().order_by('altura')
@@ -177,7 +177,7 @@ def tabla_cubicaje(request, id_rex):
             'cubicaje'   : tanque, 
             'id'    : id_rex
         }
-        return render(request, "tabla_cubicajeT2.html", data)
+        return render(request, "tabla_cubicaje_t2.html", data)
 
     if tank_id == 3:
         tanque=tanqueT3.objects.all().order_by('altura')
@@ -187,7 +187,7 @@ def tabla_cubicaje(request, id_rex):
             'cubicaje'   : tanque, 
             'id'    : id_rex
         }
-        return render(request, "tabla_cubicajeT3.html", data)
+        return render(request, "tabla_cubicaje_t3.html", data)
 
     if tank_id == 4:
         tanque=tanqueT4.objects.all().order_by('altura')
@@ -197,7 +197,7 @@ def tabla_cubicaje(request, id_rex):
             'cubicaje'   : tanque, 
             'id'    : id_rex
         }
-        return render(request, "tabla_cubicajeT4.html", data)
+        return render(request, "tabla_cubicaje_t4.html", data)
     
 
 def registro_puntos(request):
