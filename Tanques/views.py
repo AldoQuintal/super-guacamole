@@ -234,17 +234,52 @@ def registro_puntos(request):
                 'id'    : i.id_ref, 
                 }
                 return render(request, 'tabla_cubicaje_t1.html', data)
-
-        print("Render +1 .........")
+            
         tanque =tanqueT1.objects.create(altura=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
+    
     if tank_id == 2:
+        punto = tanqueT2.objects.all()
+        for i in punto:
+            if int(i.altura) == int(altura):
+                data={
+                'titulo'    : 'Tablas T2',
+                'cubicaje'   : punto,
+                'error' : 'El número de Altura ya ha sido registrado!',
+                'id'    : i.id_ref, 
+                }
+                return render(request, 'tabla_cubicaje_t2.html', data)
+            
         tanque =tanqueT2.objects.create(altura=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT2/{0}'.format(id))
+    
     if tank_id == 3:
+        punto = tanqueT3.objects.all()
+        for i in punto:
+            if int(i.altura) == int(altura):
+                data={
+                'titulo'    : 'Tablas T3',
+                'cubicaje'   : punto,
+                'error' : 'El número de Altura ya ha sido registrado!',
+                'id'    : i.id_ref, 
+                }
+                return render(request, 'tabla_cubicaje_t3.html', data)
+            
         tanque =tanqueT3.objects.create(altura=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT3/{0}'.format(id))
+    
     if tank_id == 4:
+        punto = tanqueT4.objects.all()
+        for i in punto:
+            if int(i.altura) == int(altura):
+                data={
+                'titulo'    : 'Tablas T4',
+                'cubicaje'   : punto,
+                'error' : 'El número de Altura ya ha sido registrado!',
+                'id'    : i.id_ref, 
+                }
+                return render(request, 'tabla_cubicaje_t4.html', data)
+            
         tanque =tanqueT4.objects.create(altura=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT4/{0}'.format(id))
         
