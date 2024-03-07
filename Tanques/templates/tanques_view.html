@@ -4,9 +4,12 @@
 {% block content %}
 
     <div class="container py-4">
-        {{ error }}
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
         <div class="row">
-            
             <div class="col-md-3">
                 <h2>Registro Tanques</h2>
                 <div class="card">
