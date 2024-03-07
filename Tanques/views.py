@@ -230,7 +230,8 @@ def registro_puntos(request):
                 data={
                 'titulo'    : 'Tablas T1',
                 'cubicaje'   : punto,
-                'error' : 'El número de Altura ya ha sido registrado!'
+                'error' : 'El número de Altura ya ha sido registrado!',
+                'id'    : i.id_ref, 
                 }
                 return render(request, 'tabla_cubicaje_t1.html', data)
 
