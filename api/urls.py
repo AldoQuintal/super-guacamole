@@ -6,6 +6,7 @@ from Tanques.views import TanquesListView
 
 router=routers.DefaultRouter()
 router.register(r'entregas', views.ProgrammerViewSet)
+router.register(r'inventarios', views.InventariosViewSet)
 
 
 urlpatterns = [

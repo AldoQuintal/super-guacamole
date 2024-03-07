@@ -3,10 +3,7 @@ from Tanques.views import home, eliminar_tanque, consulta_inventarios, signout, 
 from api.views import consulta_entrega
 from django.contrib.auth.views import LoginView, LogoutView
 from Tanques import views
-from rest_framework import routers
 
-router=routers.DefaultRouter()
-router.register(r'inventarios', views.InventariosViewSet)
 
 
 urlpatterns = [
