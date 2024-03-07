@@ -232,7 +232,7 @@ def registro_puntos(request):
                 'cubicaje'   : punto,
                 'error' : 'El número de Altura ya ha sido registrado!'
                 }
-                return render(request, '/tanques/tablaCubicajeT1/{0}'.format(id), data)
+                return render(request, 'tabla_cubicaje_t1.html', data)
 
         print("Render +1 .........")
         tanque =tanqueT1.objects.create(altura=altura, volumen= volumen, id_ref=id)
