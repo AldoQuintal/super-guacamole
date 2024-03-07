@@ -216,22 +216,20 @@ def registro_puntos(request):
         return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
     if tank_id == 2:
         tanque =tanqueT2.objects.create(altura=altura, volumen= volumen, id_ref=id)
-        return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
+        return redirect('/tanques/tablaCubicajeT2/{0}'.format(id))
     if tank_id == 3:
         tanque =tanqueT3.objects.create(altura=altura, volumen= volumen, id_ref=id)
-        return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
+        return redirect('/tanques/tablaCubicajeT3/{0}'.format(id))
     if tank_id == 4:
         tanque =tanqueT4.objects.create(altura=altura, volumen= volumen, id_ref=id)
-        return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
+        return redirect('/tanques/tablaCubicajeT4/{0}'.format(id))
         
     
 ## Función para borrar puntos de la tabla de cubicaje ##
 def delete_punto_t1(request, id_rex):
-    id = request.POST['id']
-    print(f'Id en Delete: {id}')
     punto=tanqueT1.objects.get(id=id_rex)
     punto.delete()
-    return redirect('/tanques/')
+    return redirect('/tablaCubicajeT1/{0}'.format(punto.id_ref))
 
 
 
