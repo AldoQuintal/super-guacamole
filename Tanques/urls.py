@@ -30,6 +30,10 @@ urlpatterns = [
     path('registroTablaCubicajeT4/', registro_puntos),
 
     path('tanques/tablaCubicajeT1/eliminacionPuntos/<int:id_rex>', views.delete_punto_t1),
+    path('tanques/tablaCubicajeT2/eliminacionPuntos/<int:id_rex>', views.delete_punto_t2),
+    path('tanques/tablaCubicajeT3/eliminacionPuntos/<int:id_rex>', views.delete_punto_t3),
+    path('tanques/tablaCubicajeT4/eliminacionPuntos/<int:id_rex>', views.delete_punto_t4),
+
     path('accounts/register/', register),
     path('accounts/login/', signin, name='login'), 
     path('accounts/logout/', signout, name='logout'),

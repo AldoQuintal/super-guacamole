@@ -231,6 +231,21 @@ def delete_punto_t1(request, id_rex):
     punto.delete()
     return redirect('/tanques/tablaCubicajeT1/{0}'.format(punto.id_ref))
 
+def delete_punto_t2(request, id_rex):
+    punto=tanqueT2.objects.get(id=id_rex)
+    punto.delete()
+    return redirect('/tanques/tablaCubicajeT2/{0}'.format(punto.id_ref))
+
+def delete_punto_t3(request, id_rex):
+    punto=tanqueT3.objects.get(id=id_rex)
+    punto.delete()
+    return redirect('/tanques/tablaCubicajeT3/{0}'.format(punto.id_ref))
+
+def delete_punto_t4(request, id_rex):
+    punto=tanqueT4.objects.get(id=id_rex)
+    punto.delete()
+    return redirect('/tanques/tablaCubicajeT4/{0}'.format(punto.id_ref))
+
 
 
 ###### Sistema de Registro, Login, Logout ######
