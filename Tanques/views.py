@@ -165,7 +165,7 @@ def tabla_cubicaje(request, id_rex):
         data={
             'titulo'    : 'Edición de tanque',
             'cubicaje'   : tanque, 
-            'id_rex'    : id_rex
+            'id'    : id_rex
         }
 
     if tank_id == 2:
@@ -174,7 +174,7 @@ def tabla_cubicaje(request, id_rex):
         data={
             'titulo'    : 'Edición de tanque',
             'cubicaje'   : tanque, 
-            'id_rex'    : id_rex
+            'id'    : id_rex
         }
 
     if tank_id == 3:
@@ -183,7 +183,7 @@ def tabla_cubicaje(request, id_rex):
         data={
             'titulo'    : 'Edición de tanque',
             'cubicaje'   : tanque, 
-            'id_rex'    : id_rex
+            'id'    : id_rex
         }
 
     if tank_id == 4:
@@ -192,7 +192,7 @@ def tabla_cubicaje(request, id_rex):
         data={
             'titulo'    : 'Edición de tanque',
             'cubicaje'   : tanque, 
-            'id_rex'    : id_rex
+            'id'    : id_rex
         }
 
     return render(request, "tabla_cubicaje.html", data)
