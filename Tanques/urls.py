@@ -23,7 +23,7 @@ urlpatterns = [
     path('tanques/tablaCubicajeT4/<int:id_rex>', tabla_cubicaje),
 
 
-    path('TablaCubicajeT1/', registro_puntos),
+    path('registroTablaCubicajeT1/', registro_puntos),
     path('registroTablaCubicajeT2/', registro_puntos),
     path('registroTablaCubicajeT3/', registro_puntos),
     path('registroTablaCubicajeT4/', registro_puntos),
