@@ -3,7 +3,7 @@ from typing import Any
 from django.db.models.query import QuerySet
 from django.shortcuts import render, redirect
 from django.views.generic import ListView
-from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanqueT4, inventarios
+from .models import Tanques, configuration, tanqueT1, tanqueT2, tanqueT3, tanqueT4
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib import messages
 from .forms import UserRegisterForm
