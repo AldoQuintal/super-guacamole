@@ -59,9 +59,7 @@
                                 <td>{{c.capacidad}}</td>
                                 <td><a href="edicionTanques/{{c.id}}" class="btn btn-sm btn-block btn-info"><i class="fas fa-pencil-alt"></i> Editar</td>
                                 <td><a href="eliminacionTanques/{{c.id}}" class="btn btn-sm btn-block btn-danger"><i class="far fa-trash-alt"></i> Eliminar</td>
-                                {% if int(c.num_tanque) == 1 %}
                                 <td><a href="tablaCubicajeT1/{{c.id}}" class="btn btn-sm btn-block btn-warning"><i class="fa fa-paste"></i>Tabla Cubicaje</td>
-                                {% endif %}
                                 </tr>
                             {% endfor %}
                         </tbody>
