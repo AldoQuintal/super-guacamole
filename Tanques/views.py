@@ -11,6 +11,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout, authenticate
 from django.contrib.auth.models import User
 from django.http import HttpResponse
+from rest_framework import viewsets
+from .serializer import InventariosSerializer
 
 
 # Create your views here.
@@ -357,6 +359,11 @@ def signin(request):
             login(request, user)
             return redirect('/tanques/')
 
+### Inventarios ###
+class InventariosViewSet(viewsets.ModelViewSet):
+    queryset = inventarios.objects.all()
+    serializer_class = InventariosSerializer
+
 # Create your views here.
 @login_required
 def consulta_inventarios(request):
@@ -367,3 +374,4 @@ def consulta_inventarios(request):
         'config'   : invent
     }
     return render(request, "inventarios.html", data)
+
