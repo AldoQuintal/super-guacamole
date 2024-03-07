@@ -63,9 +63,11 @@
                                 <td><a href="tablaCubicajeT1/{{c.id}}" class="btn btn-sm btn-block btn-warning"><i class="fa fa-paste"></i>Tabla Cubicaje</td>
                                 {% elif c.num_tanque == 2 %}
                                 <td><a href="tablaCubicajeT2/{{c.id}}" class="btn btn-sm btn-block btn-warning"><i class="fa fa-paste"></i>Tabla Cubicaje</td>
+                                {% elif c.num_tanque == 3 %}
+                                <td><a href="tablaCubicajeT3/{{c.id}}" class="btn btn-sm btn-block btn-warning"><i class="fa fa-paste"></i>Tabla Cubicaje</td>
+                                {% elif c.num_tanque == 4 %}
+                                <td><a href="tablaCubicajeT4/{{c.id}}" class="btn btn-sm btn-block btn-warning"><i class="fa fa-paste"></i>Tabla Cubicaje</td>
                                 {% endif %}
-                                
-
                                 </tr>
                             {% endfor %}
                         </tbody>
