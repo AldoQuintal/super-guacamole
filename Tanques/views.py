@@ -224,7 +224,7 @@ def registro_puntos(request):
     tank_id = tanque.num_tanque
     print(f'tank_id: {tank_id}')
     if tank_id == 1:
-        punto = tanqueT1.objects.all()
+        punto = tanqueT1.objects.all().order_by('altura')
         for i in punto:
             if int(i.altura) == int(altura):
                 data={
@@ -239,7 +239,7 @@ def registro_puntos(request):
         return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
     
     if tank_id == 2:
-        punto = tanqueT2.objects.all()
+        punto = tanqueT2.objects.all().order_by('altura')
         for i in punto:
             if int(i.altura) == int(altura):
                 data={
@@ -254,7 +254,7 @@ def registro_puntos(request):
         return redirect('/tanques/tablaCubicajeT2/{0}'.format(id))
     
     if tank_id == 3:
-        punto = tanqueT3.objects.all()
+        punto = tanqueT3.objects.all().order_by('altura')
         for i in punto:
             if int(i.altura) == int(altura):
                 data={
@@ -269,7 +269,7 @@ def registro_puntos(request):
         return redirect('/tanques/tablaCubicajeT3/{0}'.format(id))
     
     if tank_id == 4:
-        punto = tanqueT4.objects.all()
+        punto = tanqueT4.objects.all().order_by('altura')
         for i in punto:
             if int(i.altura) == int(altura):
                 data={
