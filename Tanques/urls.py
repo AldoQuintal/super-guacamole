@@ -18,6 +18,12 @@ urlpatterns = [
     path('consulta_entrega/', consulta_entrega),
     path('tanques/tablaCubicaje/<int:id_rex>', tabla_cubicaje),
     path('registroTablaCubicaje/', registro_puntos),
+
+    path('registroTablaCubicajeT1/', registro_puntos),
+    path('registroTablaCubicajeT2/', registro_puntos),
+    path('registroTablaCubicajeT3/', registro_puntos),
+    path('registroTablaCubicajeT4/', registro_puntos),
+
     path('tanques/tablaCubicaje/eliminacionPuntos/<int:id_rex>', delete_punto),
     path('accounts/register/', register),
     path('accounts/login/', signin, name='login'), 

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container py-4">
+    <div class="row">
+                    
+        <div class="col-md-3">
+            <h2>Registro puntos</h2>
+            <div class="card">
+                <div class="card-body">
+                    <form action="/registroTablaCubicajeT4/" method="POST">{% csrf_token %}
+                        <input type="hidden" value="{{id}}" name="id">
+                        <div class="form-group">
+                            <input type="number" name="txtaltura" class="form-control mt-2" min="1" max="10" placeholder="Número tanque" autofocus required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="txtvolumen" class="form-control mt-2" min="1" max="10" placeholder="Número tanque" autofocus required>
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="submit" class="btn btn-success btn-block text-white" value="Guardar">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-md-9">
+            <h2>Listado de Tanques</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>id</th>
+                            <th>Altura</th>
+                            <th>Volumen</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in cubicaje %}
+                        <tr>
+                            <td>{{id}}</td>
+                            <td>{{c.altura}}</td>
+                            <td>{{c.volumen}}</td>
+                            <td><a href="eliminacionPuntos/{{c.id}}" class="btn btn-sm btn-block btn-danger"><i class="far fa-trash-alt"></i> Eliminar</td>
+                        </tr>
+                        {% endfor %} 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+{% endblock %}

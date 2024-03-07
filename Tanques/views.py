@@ -19,7 +19,7 @@ def home(request):
     tanquesList=Tanques.objects.all().order_by('num_tanque')
 
     data={
-        'titulo'    : 'Regitro de Tanques',
+        'titulo'    : 'Registro de Tanques',
         'tanques'   : tanquesList
     }
     return render(request, "tanques_view.html", data)
@@ -209,14 +209,18 @@ def registro_puntos(request):
     print(f'tank_id: {tank_id}')
     if tank_id == 1:
         tanque =tanqueT1.objects.create(altura=altura, volumen= volumen, id_ref=id)
+        return redirect('/tablaCubicajeT1/{0}'.format(id))
     if tank_id == 2:
         tanque =tanqueT2.objects.create(altura=altura, volumen= volumen, id_ref=id)
+        return redirect('/tablaCubicajeT2/{0}'.format(id))
     if tank_id == 3:
         tanque =tanqueT3.objects.create(altura=altura, volumen= volumen, id_ref=id)
+        return redirect('/tablaCubicajeT3/{0}'.format(id))
     if tank_id == 4:
         tanque =tanqueT4.objects.create(altura=altura, volumen= volumen, id_ref=id)
+        return redirect('/tablaCubicajeT4/{0}'.format(id))
         
-    return redirect('/tablaCubicaje/{0}'.format(id))
+    
 
 def delete_punto(request, id_rex):
     tanque = Tanques.objects.all()
