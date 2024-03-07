@@ -229,7 +229,7 @@ def registro_puntos(request):
 def delete_punto_t1(request, id_rex):
     punto=tanqueT1.objects.get(id=id_rex)
     punto.delete()
-    return redirect('/tablaCubicajeT1/{0}'.format(punto.id_ref))
+    return redirect('/tanques/tablaCubicajeT1/{0}'.format(punto.id_ref))
 
 
 
