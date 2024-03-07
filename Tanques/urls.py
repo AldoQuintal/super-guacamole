@@ -16,7 +16,12 @@ urlpatterns = [
     path('editarConfig/', editar_config ),
     path('configuracion/edicionConfig/<int:id>', edit_config ),
     path('consulta_entrega/', consulta_entrega),
-    path('tanques/tablaCubicaje/<int:id_rex>', tabla_cubicaje),
+
+    path('tanques/tablaCubicajeT1/<int:id_rex>', tabla_cubicaje),
+    path('tanques/tablaCubicajeT2/<int:id_rex>', tabla_cubicaje),
+    path('tanques/tablaCubicajeT3/<int:id_rex>', tabla_cubicaje),
+    path('tanques/tablaCubicajeT4/<int:id_rex>', tabla_cubicaje),
+
     path('registroTablaCubicaje/', registro_puntos),
 
     path('registroTablaCubicajeT1/', registro_puntos),
