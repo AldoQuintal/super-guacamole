@@ -47,14 +47,14 @@ def registrar_tanque(request):
 
     tanq_list = Tanques.objects.all()
     for i in tanq_list:
-        i.num_tanque = num_tanque
+        if i.num_tanque == num_tanque:
 
-        data={
-        'titulo'    : 'Registro de Tanques',
-        'tanques'   : tanq_list,
-        'error' : 'El número de tanque ya ha sido registrado!'
-        }
-        return render(request, 'tanques_view.html', data)
+            data={
+            'titulo'    : 'Registro de Tanques',
+            'tanques'   : tanq_list,
+            'error' : 'El número de tanque ya ha sido registrado!'
+            }
+            return render(request, 'tanques_view.html', data)
 
     tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
     return redirect('/tanques/')
@@ -223,6 +223,16 @@ def registro_puntos(request):
     tank_id = tanque.num_tanque
     print(f'tank_id: {tank_id}')
     if tank_id == 1:
+        punto = tanqueT1.objects.all()
+        for i in punto:
+            if i.altura == altura:
+                data={
+                'titulo'    : 'Tablas T1',
+                'cubicaje'   : punto,
+                'error' : 'El número de Altura ya ha sido registrado!'
+                }
+                return render(request, '/tanques/tablaCubicajeT1/{0}'.format(id), data)
+
         tanque =tanqueT1.objects.create(altura=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
     if tank_id == 2:
