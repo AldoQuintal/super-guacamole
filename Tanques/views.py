@@ -37,13 +37,24 @@ class TanquesListView(ListView):
     
 
 def registrar_tanque(request):
-
+    
     num_tanque=request.POST['txtnum_tanque']
     print(f'Num_tanque: {num_tanque}')
     producto=request.POST['txtprodcuto']
     description=request.POST['txtdescripcion']
     capacidad=request.POST['txtcapacidad']
     altura=request.POST['txtaltura']
+
+    tanq_list = Tanques.objects.all()
+    for i in tanq_list:
+        i.num_tanque = num_tanque
+
+        data={
+        'titulo'    : 'Registro de Tanques',
+        'tanques'   : tanq_list,
+        'error' : 'El número de tanque ya ha sido registrado!'
+        }
+        return render(request, 'tanques_view.html', data)
 
     tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
     return redirect('/tanques/')
