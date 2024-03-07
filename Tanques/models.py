@@ -28,7 +28,7 @@ class configuration(models.Model):
     num_entregas = models.CharField(max_length=10, verbose_name="Número de entregas a guardar")
 
 class tanqueT1(models.Model):
-    altura = models.CharField()
+    altura = models.SmallIntegerField()
     volumen = models.CharField()
     id_ref = models.CharField()
     class Meta:
