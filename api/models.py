@@ -14,7 +14,7 @@ class Entregas(models.Model):
 
 class inventarios(models.Model):
     vr_tanque = models.CharField(max_length=10)
-    vr_fecha = models.CharField(max_length=20)
+    vr_fecha = models.CharField(max_length=30)
     vr_volumen = models.CharField(max_length=20)
     vr_vol_ct = models.CharField(max_length=20)
     vr_agua = models.CharField(max_length=20)
