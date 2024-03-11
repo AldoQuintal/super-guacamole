@@ -6,4 +6,4 @@ const btnsEliminacion=document.querySelectorAll('.btnEliminacion');
         console.log(btn);
     })
 
-})
+})();
