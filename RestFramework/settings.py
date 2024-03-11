@@ -32,7 +32,8 @@ ALLOWED_HOSTS = ['*']
 LOGIN_REDIRECT_URL = '/tanques/'
 #LOGOUT_REDIRECT_URL = reverse_lazy('login')
 
-
+# Seguridad 
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 # Application definition
 
