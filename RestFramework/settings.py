@@ -35,6 +35,9 @@ LOGIN_REDIRECT_URL = '/tanques/'
 # Seguridad 
 SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
+# Ventanas de confirmación
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
+
 # Application definition
 
 INSTALLED_APPS = [
