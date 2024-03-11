@@ -164,33 +164,34 @@ def edit_config(request, id):
     }
 
     print(f'Conf: {conf.puerto}')
-    if not ('/dev/tty') == conf.puerto[0:8]:
-        print("No son iguales en configuraciónes")
-        
-        data={
-        'titulo'    : 'Configuración',
-        'error' : f'Sintaxis del puerto: {conf.puerto}, no coincide con /dev/tty'
-        }
-        return render(request, "edicionConfig.html", data)
     
-    else:
-
-        return render(request, "edicionConfig.html", data)
+    return render(request, "edicionConfig.html", data)
 
 ## Función para editar la configuración de los tanques ## 
 def editar_config(request):
     id = int(request.POST['id'])
     num_puntos=request.POST['txtnum_puntos']
     num_entregas=request.POST['txtnum_entregas']
+    puerto = request.POST['txtcom_port']
+
+    if not ('/dev/tty') == puerto[0:8]:
+        print("Son iguales Pasa")
+        data={
+        'titulo'    : 'Configuración',
+        'error' : f'Sintaxis del puerto: {puerto}, no coincide con /dev/tty'
+        }
+        return render(request, "config_view.html", data)
     
+    else:
 
-    conf=configuration.objects.get(id=id)
-    conf.num_puntos = num_puntos
-    conf.num_entregas = num_entregas
-    conf.save()
+        conf=configuration.objects.get(id=id)
+        conf.num_puntos = num_puntos
+        conf.num_entregas = num_entregas
+        conf.puerto = puerto
+        conf.save()
 
-    #tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
-    return redirect('/configuracion/')
+        #tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
+        return redirect('/configuracion/')
 
 ## Crea el render de las respectivas tablas de cubicaje segun el tanque ##
 # Create your views here.
