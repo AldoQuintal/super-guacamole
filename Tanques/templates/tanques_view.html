@@ -1,6 +1,7 @@
 
 {% extends 'base.html' %}
 
+{% block content %}
 {% block js %}
 <script>
     function eliminarTanque(id){
@@ -13,8 +14,6 @@
     }
 </script>
 {% endblock %}
-
-{% block content %}
     <div class="container py-4">
         {% if error %}
         <div class="alert alert-danger col-md-12" role="alert">
