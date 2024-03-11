@@ -131,6 +131,7 @@ def registrar_config(request):
     num_puntos=request.POST['txtnum_puntos']
     num_entregas=request.POST['txtnum_entregas']
     puerto = request.POST['txtcom_port']
+    print(f'Puerto : {puerto}')
 
     tanque =configuration.objects.create(num_puntos=num_puntos, num_entregas=num_entregas, puerto=puerto)
     return redirect('/configuracion/')
