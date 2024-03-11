@@ -161,11 +161,21 @@ def edit_config(request, id):
     data={
         'titulo'    : 'Edición de configuración',
         'conf'   : conf
+        
     }
 
     print(f'Conf: {conf.puerto}')
+    if not ('/dev/tty') == conf.puerto[0:8]:
+        data={
+        'titulo'    : 'Configuración',
+        'error' : f'Sintaxis del puerto: {conf.puerto}, no coincide con /dev/tty'
+        }
+        
+        return redirect(f'/configuracion/edicionConfig/{id}', data) 
     
-    return render(request, "edicionConfig.html", data)
+    else:
+    
+        return render(request, "edicionConfig.html", data)
 
 ## Función para editar la configuración de los tanques ## 
 def editar_config(request):
@@ -182,9 +192,7 @@ def editar_config(request):
         'error' : f'Sintaxis del puerto: {puerto}, no coincide con /dev/tty'
         }
         
-        return redirect(f'/configuracion/edicionConfig/{id}', data)
-        return render(request, "config_view.html", data)
-    
+        return redirect(f'/configuracion/edicionConfig/{id}', data)    
     else:
 
         conf=configuration.objects.get(id=id)
