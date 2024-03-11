@@ -140,7 +140,7 @@ def registrar_config(request):
         print("Son iguales Pasa")
         data={
         'titulo'    : 'Configuración',
-        'error' : f'Sintaxis del puerto, no coincide con /dev/tty'
+        'error' : 'Sintaxis del puerto, no coincide con /dev/tty'
         }
         return (request, "config_view.html", data)
     
