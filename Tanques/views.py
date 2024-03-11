@@ -182,7 +182,7 @@ def editar_config(request):
         'error' : f'Sintaxis del puerto: {puerto}, no coincide con /dev/tty'
         }
         
-        return redirect(f'/edicionConfig/{id}', data)
+        return redirect(f'/configuracion/edicionConfig/{id}', data)
         return render(request, "config_view.html", data)
     
     else:
