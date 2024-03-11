@@ -58,7 +58,7 @@ def registrar_tanque(request):
 
             return render(request, 'tanques_view.html', data)
 
-    tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, nivel=altura)
+    tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
     messages.success(request, "Agregado correctamente")
     return redirect('/tanques/')
 
