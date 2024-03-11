@@ -34,14 +34,15 @@
                   <a class="nav-link" href="/inventarios/">Inventarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/configuracion/">Configuración</a>
-                  </li>
-                <li class="nav-item">
-                  <a href="/accounts/logout/" class="nav-link">{% csrf_token %}Logout</a>
+                  <a class="nav-link" href="/configuracion/">Configuración</a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link">@{{ user.username }}</a>
                 </li>
+                <li class="nav-item">
+                  <a href="/accounts/logout/" class="nav-link">{% csrf_token %}Logout</a>
+                </li>
+                
                 {% else %}
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'login' %}">Login</a>
