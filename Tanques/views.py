@@ -58,7 +58,7 @@ def registrar_tanque(request):
 
             return render(request, 'tanques_view.html', data)
 
-    tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
+    tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, nivel=altura)
     messages.success(request, "Agregado correctamente")
     return redirect('/tanques/')
 
@@ -67,16 +67,16 @@ def eliminar_tanque(request, id):
     tank_id = tanque.num_tanque
     # Eliminamos todos los registros creados anteriormente 
     if tank_id == 1:
-        tank_delete = tanqueT1.objects.all().order_by('altura')
+        tank_delete = tanqueT1.objects.all().order_by('nivel')
         tank_delete.delete()
     if tank_id == 2:
-        tank_delete = tanqueT2.objects.all().order_by('altura')
+        tank_delete = tanqueT2.objects.all().order_by('nivel')
         tank_delete.delete()
     if tank_id == 3:
-        tank_delete = tanqueT3.objects.all().order_by('altura')
+        tank_delete = tanqueT3.objects.all().order_by('nivel')
         tank_delete.delete()
     if tank_id == 4:
-        tank_delete = tanqueT4.objects.all().order_by('altura')
+        tank_delete = tanqueT4.objects.all().order_by('nivel')
         tank_delete.delete()
     
     tanque.delete()
@@ -107,7 +107,7 @@ def editar_tanque(request):
     tanque.producto = producto
     tanque.descripcion = description
     tanque.capacidad = capacidad
-    tanque.altura = altura
+    tanque.nivel = altura
     tanque.save()
 
     #tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
@@ -214,7 +214,7 @@ def tabla_cubicaje(request, id_rex):
     tank_id = tanque_id.num_tanque
     print(f'tankid ------------- {tank_id}')
     if tank_id == 1:
-        tanque=tanqueT1.objects.order_by('altura')
+        tanque=tanqueT1.objects.order_by('nivel')
         print("Tank_id = 1 entrando al primer tanque ########")
         data={
             'titulo'    : 'Tablas T1',
@@ -224,7 +224,7 @@ def tabla_cubicaje(request, id_rex):
         return render(request, "tabla_cubicaje_t1.html", data)
 
     if tank_id == 2:
-        tanque=tanqueT2.objects.order_by('altura')
+        tanque=tanqueT2.objects.order_by('nivel')
         print("Tank_id = 2 entrando al Segundo tanque ########")
         data={
             'titulo'    : 'Tablas T2',
@@ -234,7 +234,7 @@ def tabla_cubicaje(request, id_rex):
         return render(request, "tabla_cubicaje_t2.html", data)
 
     if tank_id == 3:
-        tanque=tanqueT3.objects.order_by('altura')
+        tanque=tanqueT3.objects.order_by('nivel')
         print("Tank_id = 3 entrando al Tercer tanque ########")
         data={
             'titulo'    : 'Tablas T3',
@@ -244,7 +244,7 @@ def tabla_cubicaje(request, id_rex):
         return render(request, "tabla_cubicaje_t3.html", data)
 
     if tank_id == 4:
-        tanque=tanqueT4.objects.order_by('altura')
+        tanque=tanqueT4.objects.order_by('nivel')
         print("Tank_id = 4 entrando al cuarto tanque ########")
         data={
             'titulo'    : 'Tablas T4',
@@ -267,7 +267,7 @@ def registro_puntos(request):
     if tank_id == 1:
         punto = tanqueT1.objects.order_by('altura')
         for i in punto:
-            if int(i.altura) == int(altura):
+            if int(i.nivel) == int(altura):
                 data={
                 'titulo'    : 'Tablas T1',
                 'cubicaje'   : punto,
@@ -276,13 +276,13 @@ def registro_puntos(request):
                 }
                 return render(request, 'tabla_cubicaje_t1.html', data)
             
-        tanque =tanqueT1.objects.create(altura=altura, volumen= volumen, id_ref=id)
+        tanque =tanqueT1.objects.create(nivel=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT1/{0}'.format(id))
     
     if tank_id == 2:
         punto = tanqueT2.objects.order_by('altura')
         for i in punto:
-            if int(i.altura) == int(altura):
+            if int(i.nivel) == int(altura):
                 data={
                 'titulo'    : 'Tablas T2',
                 'cubicaje'   : punto,
@@ -291,13 +291,13 @@ def registro_puntos(request):
                 }
                 return render(request, 'tabla_cubicaje_t2.html', data)
             
-        tanque =tanqueT2.objects.create(altura=altura, volumen= volumen, id_ref=id)
+        tanque =tanqueT2.objects.create(nivel=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT2/{0}'.format(id))
     
     if tank_id == 3:
         punto = tanqueT3.objects.order_by('altura')
         for i in punto:
-            if int(i.altura) == int(altura):
+            if int(i.nivel) == int(altura):
                 data={
                 'titulo'    : 'Tablas T3',
                 'cubicaje'   : punto,
@@ -306,13 +306,13 @@ def registro_puntos(request):
                 }
                 return render(request, 'tabla_cubicaje_t3.html', data)
             
-        tanque =tanqueT3.objects.create(altura=altura, volumen= volumen, id_ref=id)
+        tanque =tanqueT3.objects.create(nivel=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT3/{0}'.format(id))
     
     if tank_id == 4:
         punto = tanqueT4.objects.order_by('altura')
         for i in punto:
-            if int(i.altura) == int(altura):
+            if int(i.nivel) == int(altura):
                 data={
                 'titulo'    : 'Tablas T4',
                 'cubicaje'   : punto,
@@ -321,7 +321,7 @@ def registro_puntos(request):
                 }
                 return render(request, 'tabla_cubicaje_t4.html', data)
             
-        tanque =tanqueT4.objects.create(altura=altura, volumen= volumen, id_ref=id)
+        tanque =tanqueT4.objects.create(nivel=altura, volumen= volumen, id_ref=id)
         return redirect('/tanques/tablaCubicajeT4/{0}'.format(id))
         
     
