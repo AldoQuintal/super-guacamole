@@ -214,7 +214,7 @@ def tabla_cubicaje(request, id_rex):
     tank_id = tanque_id.num_tanque
     print(f'tankid ------------- {tank_id}')
     if tank_id == 1:
-        tanque=tanqueT1.objects.order_by('altura')
+        tanque=tanqueT1.objects.order_by('nivel')
         print("Tank_id = 1 entrando al primer tanque ########")
         data={
             'titulo'    : 'Tablas T1',
@@ -224,7 +224,7 @@ def tabla_cubicaje(request, id_rex):
         return render(request, "tabla_cubicaje_t1.html", data)
 
     if tank_id == 2:
-        tanque=tanqueT2.objects.order_by('altura')
+        tanque=tanqueT2.objects.order_by('nivel')
         print("Tank_id = 2 entrando al Segundo tanque ########")
         data={
             'titulo'    : 'Tablas T2',
@@ -234,7 +234,7 @@ def tabla_cubicaje(request, id_rex):
         return render(request, "tabla_cubicaje_t2.html", data)
 
     if tank_id == 3:
-        tanque=tanqueT3.objects.order_by('altura')
+        tanque=tanqueT3.objects.order_by('nivel')
         print("Tank_id = 3 entrando al Tercer tanque ########")
         data={
             'titulo'    : 'Tablas T3',
@@ -244,7 +244,7 @@ def tabla_cubicaje(request, id_rex):
         return render(request, "tabla_cubicaje_t3.html", data)
 
     if tank_id == 4:
-        tanque=tanqueT4.objects.order_by('altura')
+        tanque=tanqueT4.objects.order_by('nivel')
         print("Tank_id = 4 entrando al cuarto tanque ########")
         data={
             'titulo'    : 'Tablas T4',
