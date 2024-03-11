@@ -165,6 +165,7 @@ def edit_config(request, id):
 
     print(f'Conf: {conf.puerto}')
     if not ('/dev/tty') == conf.puerto[0:8]:
+        print("No son iguales en configuraciónes")
         
         data={
         'titulo'    : 'Configuración',
