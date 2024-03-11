@@ -127,11 +127,18 @@ class ConfigListView(ListView):
     model=configuration
     template_name='config_view.html'
 
+
 def registrar_config(request):
     num_puntos=request.POST['txtnum_puntos']
     num_entregas=request.POST['txtnum_entregas']
     puerto = request.POST['txtcom_port']
+
+    # Validación del puerto
+    # /dev/tty
     print(f'Puerto : {puerto}')
+    for a in ('/dev/tty'):
+        print(a)
+
 
     tanque =configuration.objects.create(num_puntos=num_puntos, num_entregas=num_entregas, puerto=puerto)
     return redirect('/configuracion/')
