@@ -173,14 +173,15 @@ def editar_config(request):
     num_puntos=request.POST['txtnum_puntos']
     num_entregas=request.POST['txtnum_entregas']
     puerto = request.POST['txtcom_port']
-
+    print(f'Id en el edit {id}')
+    
     if not ('/dev/tty') == puerto[0:8]:
         print("Son iguales Pasa")
         data={
         'titulo'    : 'Configuración',
         'error' : f'Sintaxis del puerto: {puerto}, no coincide con /dev/tty'
         }
-        return render(request, f"config_view.html/{id}", data)
+        return render(request, "config_view.html", data)
     
     else:
 
