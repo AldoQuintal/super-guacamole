@@ -2,7 +2,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<script src="{% static 'js/gestionTanques.js' %}"></script>
     <div class="container py-4">
         {% if error %}
         <div class="alert alert-danger col-md-12" role="alert">
@@ -82,6 +82,5 @@
             </div>
         </div>
     </div>
-    <script src="{% static 'js/gestionTanques.js' %}"></script>
 </body>
 {% endblock %}
