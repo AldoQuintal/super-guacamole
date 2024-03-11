@@ -30,29 +30,29 @@ class configuration(models.Model):
 
 class tanqueT1(models.Model):
     nivel = models.SmallIntegerField()
-    volumen = models.CharField()
+    volumen = models.FloatField()
     id_ref = models.CharField()
     class Meta:
         db_table = 't1'
 
 class tanqueT2(models.Model):
-    nivel = models.CharField()
-    volumen = models.CharField()
+    nivel = models.SmallIntegerField()
+    volumen = models.FloatField()
     id_ref = models.CharField()
 
     class Meta:
         db_table = 't2'
 
 class tanqueT3(models.Model):
-    nivel = models.CharField()
-    volumen = models.CharField()
+    nivel = models.SmallIntegerField()
+    volumen = models.FloatField()
     id_ref = models.CharField()
     class Meta:
         db_table = 't3'
 
 class tanqueT4(models.Model):
-    nivel = models.CharField()
-    volumen = models.CharField()
+    nivel = models.SmallIntegerField()
+    volumen = models.FloatField()
     id_ref = models.CharField()
     class Meta:
         db_table = 't4'
