@@ -52,19 +52,6 @@
         </div>
       </div>
       </nav>
-
-      {% if messages %}
-        {% for m in messages %}
-          <script>
-            Swal.fire({
-              "title" : "Prueba1",
-              "text"  : "{{m}}",
-              "icon"  : "success",
-            })
-          </script>
-        {% endfor %}
-      {% endif %}
-
     {% block content %}{% endblock %}
 </body>
 </html>
