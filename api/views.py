@@ -34,6 +34,6 @@ def consulta_inventarios(request):
 
     data={
         'titulo'    : 'Inventarios',
-        'config'   : invent
+        'invent'   : invent
     }
     return render(request, "inventarios.html", data)

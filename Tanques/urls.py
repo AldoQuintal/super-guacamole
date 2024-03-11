@@ -8,6 +8,8 @@ from Tanques import views
 
 urlpatterns = [
     path('tanques/', home),
+    path('', home),
+    
     path('registrarTanque/', registrar_tanque),
     path('tanques/eliminacionTanques/<int:id>', eliminar_tanque ),
     path('tanques/edicionTanques/<int:id>', edit_tanque ),
