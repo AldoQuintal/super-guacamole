@@ -135,10 +135,9 @@ def registrar_config(request):
 
     # Validación del puerto
     # /dev/tty
-    print(f'Puerto : {puerto}')
-    for a in ('/dev/tty'):
-        print(a)
-
+    print(f'Puerto : {puerto[0:7]}')
+    if ('/dev/tty') == puerto[0:7]:
+        print("Son iguales Pasa")
 
     tanque =configuration.objects.create(num_puntos=num_puntos, num_entregas=num_entregas, puerto=puerto)
     return redirect('/configuracion/')
