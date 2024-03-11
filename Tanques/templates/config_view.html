@@ -16,6 +16,9 @@
                             <div class="form-group">
                                 <input type="text" name="txtnum_entregas" class="form-control mt-2" minlength="1" maxlength="2" placeholder="Total Entregas" autofocus required>
                             </div>
+                            <div class="form-group">
+                                <input type="text" name="txtcom_port" class="form-control mt-2" minlength="1" maxlength="12" placeholder="COM Port" autofocus required>
+                            </div>
                             <div class="form-group mt-2">
                                 <input type="submit" class="btn btn-success btn-block text-white" value="Guardar">
                             </div>
@@ -33,6 +36,7 @@
                             <tr>
                                 <th># de puntos</th>
                                 <th># de Entregas</th>
+                                <th>COM Port</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -40,6 +44,7 @@
                             <tr>
                                 <td>{{c.num_puntos}}</td>
                                 <td>{{c.num_entregas}}</td>
+                                <td>{{c.puerto}}</td>
                                 <td><a href="edicionConfig/{{c.id}}" class="btn btn-sm btn-block btn-info"><i class="fas fa-pencil-alt"></i> Editar</td>
                                 <td><a href="eliminacionConfig/{{c.id}}" class="btn btn-sm btn-block btn-danger"><i class="far fa-trash-alt"></i> Eliminar</td>
                             </tr>

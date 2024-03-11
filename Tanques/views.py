@@ -130,8 +130,9 @@ class ConfigListView(ListView):
 def registrar_config(request):
     num_puntos=request.POST['txtnum_puntos']
     num_entregas=request.POST['txtnum_entregas']
+    puerto = request.POST['txtcom_port']
 
-    tanque =configuration.objects.create(num_puntos=num_puntos, num_entregas=num_entregas)
+    tanque =configuration.objects.create(num_puntos=num_puntos, num_entregas=num_entregas, puerto=puerto)
     return redirect('/configuracion/')
 
 def eliminar_config(request, id):
