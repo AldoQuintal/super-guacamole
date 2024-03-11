@@ -55,7 +55,13 @@
 
       {% if messages %}
         {% for m in messages %}
-          {{m}}
+          <script>
+            Swal.fire({
+              "title" : "Prueba1",
+              "text"  : "{{m}}",
+              "icon"  : "success",
+            })
+          </script>
         {% endfor %}
       {% endif %}
 
