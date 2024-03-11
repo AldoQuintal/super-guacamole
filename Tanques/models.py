@@ -26,7 +26,7 @@ class monitoreoTanques(models.Model):
 class configuration(models.Model):
     num_puntos = models.CharField(max_length=10, verbose_name="Número de puntos a Configurar")
     num_entregas = models.CharField(max_length=10, verbose_name="Número de entregas a guardar")
-    puerto = models.CharField(max_length=10, verbose_name="COM Port")
+    puerto = models.CharField(max_length=14, verbose_name="COM Port")
 
 class tanqueT1(models.Model):
     nivel = models.SmallIntegerField()
