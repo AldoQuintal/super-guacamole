@@ -10,6 +10,13 @@
             "text"  : "lkasd",
             "icon"  : "warning",
             "showCancelButton"  : true,
+            "confirmButtonText" : "Eliminar",
+            "confirmButtonColor": "#dc3545",
+        })
+        .then(function(result){ 
+            if (result.isConfirmed){
+                window.location.href = "/eliminacionTanques/"+id+"/"
+            }
         })
     }
 </script>
