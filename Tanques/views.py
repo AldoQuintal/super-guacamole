@@ -55,9 +55,11 @@ def registrar_tanque(request):
             'tanques'   : tanq_list,
             'error' : 'El número de tanque ya ha sido registrado!'
             }
+
             return render(request, 'tanques_view.html', data)
 
     tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
+    messages.success(request, "Agregado correctamente")
     return redirect('/tanques/')
 
 def eliminar_tanque(request, id):
