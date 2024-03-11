@@ -12,20 +12,6 @@
             "showCancelButton"  : true,
             "confirmButtonText" : "Eliminar",
             "confirmButtonColor": "#dc3545",
-            showClass: {
-                popup: `
-                  animate__animated
-                  animate__fadeInUp
-                  animate__faster
-                `
-              },
-              hideClass: {
-                popup: `
-                  animate__animated
-                  animate__fadeOutDown
-                  animate__faster
-                `
-              }
         })
         .then(function(result){ 
             if (result.isConfirmed){
