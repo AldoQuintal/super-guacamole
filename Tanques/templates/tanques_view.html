@@ -15,11 +15,6 @@
         })
         .then(function(result){ 
             if (result.isConfirmed){
-                Swal.fire({
-                    title: "Borrado!",
-                    text: "El tanque ha sido eliminado.",
-                    icon: "success"
-                });
                 window.location.href = "eliminacionTanques/"+id+""
             }
         })
