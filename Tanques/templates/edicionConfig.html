@@ -2,6 +2,11 @@
 
 {% block content %}
     <div class="container py-4">
+        {% if error %}
+            <div class="alert alert-danger col-md-12" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
         <div class="row">
             <div class="col-md-4 offset-md-4">
                 <h2>Configuración</h2>
