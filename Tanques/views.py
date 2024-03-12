@@ -45,6 +45,8 @@ def registrar_tanque(request):
     capacidad=request.POST['txtcapacidad']
     altura=request.POST['txtaltura']
 
+    vr_tanque= '0'+str(num_tanque)
+
     tanq_list = Tanques.objects.all()
     for i in tanq_list:
         print(f'i.numtanque: {i.num_tanque}, num_tanque: {num_tanque}')
@@ -58,7 +60,7 @@ def registrar_tanque(request):
 
             return render(request, 'tanques_view.html', data)
 
-    tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
+    tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura, vr_tanque=vr_tanque)
     messages.success(request, "Agregado correctamente")
     return redirect('/tanques/')
 
@@ -102,12 +104,15 @@ def editar_tanque(request):
     capacidad=request.POST['txtcapacidad']
     altura=request.POST['txtaltura']
 
+    vr_tanque = '0'+str(num_tanque)
+
     tanque=Tanques.objects.get(id=id)
     tanque.num_tanque = num_tanque
     tanque.producto = producto
     tanque.descripcion = description
     tanque.capacidad = capacidad
-    tanque.nivel = altura
+    tanque.altura = altura
+    tanque.vr_tanque = vr_tanque
     tanque.save()
 
     #tanque =Tanques.objects.create(num_tanque=num_tanque, producto=producto, descripcion=description, capacidad=capacidad, altura=altura)
