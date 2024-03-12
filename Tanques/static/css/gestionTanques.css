@@ -6,3 +6,8 @@
 .colored {
     color: darkmagenta;
 }
+
+.grey_color {
+    color: #ccc;
+    font-size: 40px;
+}
