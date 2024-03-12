@@ -1,6 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% block js %}
+<script>
+    function eliminarConfig(id){
+        Swal.fire({
+            "title" : "Eliminar",
+            "text"  : "¿Estás seguro que deseas eliminar esta configuración?",
+            "icon"  : "warning",
+            "showCancelButton"  : true,
+            "confirmButtonText" : "Eliminar",
+            "confirmButtonColor": "#dc3545",
+        })
+        .then(function(result){ 
+            if (result.isConfirmed){
+                window.location.href = "eliminacionConfig/"+id+""
+            }
+        })
+    }
+</script>
+{% endblock %}
     
     <div class="container py-4">
         {% if error %}
@@ -51,7 +70,7 @@
                                 <td>{{c.num_entregas}}</td>
                                 <td>{{c.puerto}}</td>
                                 <td><a href="edicionConfig/{{c.id}}" class="btn btn-sm btn-block btn-info"><i class="fas fa-pencil-alt"></i> Editar</td>
-                                <td><a href="eliminacionConfig/{{c.id}}" class="btn btn-sm btn-block btn-danger"><i class="far fa-trash-alt"></i> Eliminar</td>
+                                <td><a href="#" onclick="eliminarConfig({{c.id}})" class="btn btn-sm btn-block btn-danger"><i class="far fa-trash-alt"></i> Eliminar</td>
                             </tr>
                             {% endfor %}
                         </tbody>
