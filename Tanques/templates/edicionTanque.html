@@ -9,20 +9,30 @@
                     <div class="card-body">
                         <form action="/editarTanque/" method="POST">{% csrf_token %}
                             <input type="hidden" value="{{tanque.id}}" name="id">
-                            <div class="form-group">
-                                <input type="text" name="txtnum_tanque" class="form-control mt-2" value="{{tanque.num_tanque}}" minlength="1" maxlength="20" placeholder="Número tanque" autofocus required>
+                            <div class="form-floating">
+                                <input type="number" name="txtnum_tanque" class="form-control" value="{{tanque.num_tanque}}" min="1" max="4" placeholder="Número tanque" autofocus required>
+                                <label for="floatingInputGrid">Número tanque</label>
                             </div>
-                            <div class="form-group">
+                            <div class="form-floating">
                                 <input type="text" name="txtprodcuto" class="form-control mt-2" value="{{tanque.producto}}" minlength="3" maxlength="20" placeholder="Producto" autofocus required>
+                                <label for="floatingInputGrid">Producto</label>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="txtdescripcion" class="form-control mt-2" value="{{tanque.descripcion}}" minlength="3" maxlength="20" placeholder="Clave del Producto" autofocus required> 
+                            <div class="form-floating">
+                                <select name="txtdescripcion" id="txtdescripcion" value="{{tanque.descripcion}}" class="form-select mt-2" aria-label="Floating label select example" autofocus required>
+                                    <option value="" disabled="disabled" selected="selected" class="grey_color">Open this select menu</option>
+                                    <option value="32011">32011</option>
+                                    <option value="32012">32012</option>
+                                    <option value="34006">34006</option>
+                                    </select>                                
+                                    <label for="floatingInputGrid">Clave de producto</label>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="txtcapacidad" class="form-control mt-2" value="{{tanque.capacidad}}" minlength="3" maxlength="20" placeholder="Capacidad" autofocus required>
+                            <div class="form-floating">
+                                <input type="number" name="txtcapacidad" class="form-control mt-2" value="{{tanque.capacidad}}" min="1000" max="80000" placeholder="Capacidad" autofocus required>
+                                <label for="floatingInputGrid">Capacidad</label>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="txtaltura" class="form-control mt-2" value="{{tanque.altura}}" minlength="3" maxlength="20" placeholder="Altura" autofocus required>
+                            <div class="form-floating">
+                                <input type="number" name="txtaltura" class="form-control mt-2" value="{{tanque.altura}}" min="1" max="4000" placeholder="Altura" autofocus required>
+                                <label for="floatingInputGrid">Altura</label>
                             </div>
                             <div class="form-group mt-2">
                                 <input type="submit" class="btn btn-success btn-block text-white" value="Guardar">
