@@ -13,46 +13,53 @@
                         </div>
                         <form class="form" method="POST">
                             {% csrf_token %}
-                            <div class="mb-3">
-                                <label for="username">Username:</label>
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Write your username">
-                            </div>
-                            <div class="mb-3">
-                                <label for="id_email">Email:</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Write your Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password1">Password:</label>
-                                <input type="password" name="password1" id="password1" class="form-control" placeholder="Write your password">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password2">Confirm your Password:</label>
-                                <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirm your Password">
+
+                            <div class="form-floating">
+                                <input type="text" name="username" id="username" class="form-control mt-2" placeholder="Write your username">
+                                <label for="floatingInputGrid">Write your username</label>
                             </div>
 
-                            <button type="submit" id="submit" class="btn btn-primary">Signup</button>
+                            <div class="form-floating">
+                                <input type="email" name="email" id="email" class="form-control mt-2" placeholder="Write your Email">
+                                <label for="floatingInputGrid">Write your Email</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="password" name="password1" id="password1" class="form-control mt-2" placeholder="Write your password">
+                                <label for="floatingInputGrid">Password</label>
+                            </div>
+                            
+                            <div class="form-floating">
+                                <input type="password" name="password2" id="password2" class="form-control mt-2" placeholder="Confirm your Password">
+                                <label for="floatingInputGrid">Confirm your Password</label>
+                            </div>
+
+                            <button type="submit" id="submit" class="btn btn-primary mt-2">Signup</button>
                         </form>
                         {% else %}
                         <form class="form" method="POST">
                             {% csrf_token %}
-                            <div class="mb-3">
-                                <label for="username">Username:</label>
-                                <input type="text" name="username" id="username" class="form-control" placeholder="Write your username">
-                            </div>
-                            <div class="mb-3">
-                                <label for="id_email">Email:</label>
-                                <input type="email" name="email" id="email" class="form-control" placeholder="Write your Email">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password1">Password:</label>
-                                <input type="password" name="password1" id="password1" class="form-control" placeholder="Write your password">
-                            </div>
-                            <div class="mb-3">
-                                <label for="password2">Confirm your Password:</label>
-                                <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirm your Password">
+                            <div class="form-floating">
+                                <input type="text" name="username" id="username" class="form-control mt-2" placeholder="Write your username">
+                                <label for="floatingInputGrid">Write your username</label>
                             </div>
 
-                            <button type="submit" id="submit" class="btn btn-primary">Signup</button>
+                            <div class="form-floating">
+                                <input type="email" name="email" id="email" class="form-control mt-2" placeholder="Write your Email">
+                                <label for="floatingInputGrid">Write your Email</label>
+                            </div>
+
+                            <div class="form-floating">
+                                <input type="password" name="password1" id="password1" class="form-control mt-2" placeholder="Write your password">
+                                <label for="floatingInputGrid">Password</label>
+                            </div>
+                            
+                            <div class="form-floating">
+                                <input type="password" name="password2" id="password2" class="form-control mt-2" placeholder="Confirm your Password">
+                                <label for="floatingInputGrid">Confirm your Password</label>
+                            </div>
+
+                            <button type="submit" id="submit" class="btn btn-primary mt-2">Signup</button>
                         </form>
                         {% endif %}
                         
