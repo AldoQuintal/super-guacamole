@@ -16,10 +16,10 @@
                     <form action="/registroTablaCubicajeT1/" method="POST">{% csrf_token %}
                         <input type="hidden" value="{{id}}" name="id">
                         <div class="form-group">
-                            <input type="number" name="txtaltura" class="form-control mt-2" min="0" max="999" placeholder="Número tanque" autofocus required>
+                            <input type="number" name="txtaltura" class="form-control mt-2" min="0" max="999" placeholder="Altura en cm" autofocus required>
                         </div>
                         <div class="form-group">
-                            <input type="number" name="txtvolumen" class="form-control mt-2" min="0" max="99999" placeholder="Número tanque" autofocus required>
+                            <input type="number" name="txtvolumen" class="form-control mt-2" min="0" max="99999" placeholder="Volumen" autofocus required>
                         </div>
                         <div class="form-group mt-2">
                             <input type="submit" class="btn btn-success btn-block text-white" value="Guardar">
