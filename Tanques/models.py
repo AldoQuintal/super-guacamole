@@ -13,7 +13,6 @@ class Tanques(models.Model):
     vol_ref = models.CharField(max_length=20, editable=False)
     fecha_ref = models.CharField(max_length=20, editable=False)
     vol_ct_ref = models.CharField(max_length=20, editable=False)
-    vol_ini = models.CharField(max_length=20)
     agua_ini = models.CharField(max_length=10)
     temp_ini = models.CharField(max_length=10)
 
