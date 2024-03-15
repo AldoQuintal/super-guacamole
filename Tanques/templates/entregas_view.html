@@ -2,7 +2,7 @@
 
 {% block content %}
     
-    <div class="container py-4">
+    <div class="container py-12">
         <div class="row">
             <div class="col-md-12 shadow p-3 mb-5 bg-body rounded">
                 <h2>Listado de Entregas</h2>
@@ -31,10 +31,14 @@
                                 <td>{{c.vr_tanque}}</td>
                                 <td>{{c.fecha_ini}}</td>
                                 <td>{{c.fecha_fin}}</td>
-                                <td>{{c.vr_volumen}}</td>
-                                <td>{{c.vr_vol_ct}}</td>
-                                <td>{{c.vr_agua}}</td>
-                                <td>{{c.vr_temp}}</td>
+                                <td>{{c.vol_ini}}</td>
+                                <td>{{c.vol_fin}}</td>
+                                <td>{{c.vol_ct_ini}}</td>
+                                <td>{{c.vol_ct_fin}}</td>
+                                <td>{{c.agua_ini}}</td>
+                                <td>{{c.agua_fin}}</td>
+                                <td>{{c.temp_ini}</td>
+                                <td>{{c.temp_fin}}</td>
                             </tr>
                             {% endfor %}
                         </tbody>
