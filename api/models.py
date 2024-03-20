@@ -25,6 +25,7 @@ class inventarios(models.Model):
     vr_vol_ct = models.CharField(max_length=20)
     vr_agua = models.CharField(max_length=20)
     vr_temp = models.CharField(max_length=20)
+    vol_ant = models.CharField(max_length=20)
 
     class Meta:
         db_table = 'inventarios'
